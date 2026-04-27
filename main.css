@@ -1,9 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Quicksand:wght@300..700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
 :root {
     --fundo: #DADCBD;
     --marromEscuro: #402516;
     --marromClaro: #A66C4B;
     --bege: #F2EDD0;
-    --fonte: quicksand, sans-serif;
+    --fonte: 'Quicksand', sans-serif;
     --borda: 2px solid var(--bege);
 }
 
@@ -18,6 +20,200 @@ body::selection {
     background-color: var(--bege);
     color: var(--marromEscuro);
 }
+
+/*tenho que colocar as variaveis de cor e fonte pra cada elemento, porque o header tem um background com blur, então se eu colocar a cor do texto do header como var(--marromEscuro) ele fica meio transparente e difícil de ler, por isso coloquei a cor do texto do header como #000000 mesmo, pra garantir que fique legível*/
+
+header {
+    position: sticky;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    border-bottom: 1px solid #DADCBD;
+    color: #000000;
+    backdrop-filter: blur(16px);
+    transition: background 0.35s, border-color 0.35s;
+    background-color: #DADCBD;
+
+}
+.navbar {
+   display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 4%; 
+    height: 64px;
+    max-width: 100%; 
+    margin: 0;
+}
+
+/*logo + julianny bacelar*/
+.nav-logo-wrap {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    color:#000000;
+    
+    
+}
+
+/* Quadrado do avatar na logo */
+.logo-avatar {
+    width: 46px; height: 46px;
+    border-radius: 999px;
+    overflow: hidden;
+    position: relative;
+    cursor: pointer;
+    flex-shrink: 0;
+    background-size:44px;
+    background-position: center;
+}
+
+/* o Julianny Bacelar do navbar */
+.nav-logo-nome {
+    font-size: 16px;
+    font-weight: 700;
+    color: #000000;
+    text-decoration: none;
+    margin-top: 0;
+}
+.nav-links {
+    display: flex;
+    align-items: center; 
+    gap: 32px;
+    list-style: none;
+    
+}
+
+.nav-links a {
+    font-size: 14px;
+    font-weight: 600;
+    color: #000;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+.nav-links a:hover { color: #402516; }
+
+.nav-btn {
+    background-color: #DADCBD;
+    border: 1px solid #402516;
+    color: #402516; /* Cor do texto combinando com a borda */
+    padding: 8px 24px;
+    border-radius: 999px;
+    font-size: 12px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+.nav-btn:hover {
+    transform: scale(1.05);
+}
+
+/* Hamburguer */
+.nav-hamburguer {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    background: none; border: none;
+    cursor: pointer; padding: 4px;
+}
+.nav-hamburguer span {
+    display: block;
+    width: 22px; height: 2px;
+    border-radius: 2px;
+    transition: all 0.3s;
+}
+
+/*animação do hamburguer para o X*/
+.nav-hamburguer.ativo span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.nav-hamburguer.ativo span:nth-child(2) { opacity: 0; }
+.nav-hamburguer.ativo span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+
+/*HERO*/
+#hero{
+    background-color: #402516; 
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: 0 10%;
+    padding-left: 60px;
+}
+
+.hero-content{
+    display: flex;
+    flex-direction: column;
+    max-width: 700px;
+    align-items: flex-end; /* Joga o botão para o final do bloco de 700px */
+    text-align: right;
+}
+.hero-content h1{
+    font-family: 'Quicksand';
+    font-size: clamp(2.5rem, 4vw, 4rem);
+    color: #DADCBD; 
+    line-height: 1.3;
+    margin-bottom: 32px;
+    max-width: 750px;
+    
+}
+.hero-image{
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.hero-image img{
+    width: 50%;
+    max-width: 450px;
+    height: auto;
+}
+.hero-btn{
+    background-color: #402516;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 14px 32px;
+    border: 1px solid #DADCBD;
+    border-radius: 999px;
+    color: #DADCBD;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+}
+/*.hero-btn:hover{tem que fazer algo para que entendam que é um link/botão clicável}*/
+
+.hero-btn a {
+    color:#DADCBD;
+    text-decoration: none;
+    font-size: 14px;
+
+}
+.tag-social {
+    display: flex;
+    flex-direction: column; 
+    gap: 90px;              
+    margin-right: 8%;     
+    justify-content: center;
+}
+
+.tag-social i {
+    font-size: 20px;        
+    color: #DADCBD;        
+    transition: transform 0.3s, color 0.3s;
+}
+
+.tag-social i:hover {
+    color: #DADCBD;           
+    transform: scale(1.2); 
+}
+
+/*serve pra n rolar a pág por baixo do menu aberto*/
+body.no-scroll {
+    overflow: hidden;
+}
+
+
 
 /* CONTAINER PRINCIPAL */
 .contato {
@@ -164,6 +360,116 @@ footer li img:hover {
     text-align: center;
     margin: 0px;
 }
+
+
+/* Responsividade nav+hero*/
+
+/* Telas Médias (Tablets - ate 1024px) */
+@media (max-width: 1024px) {
+    #hero {
+        padding: 0 5%;
+        gap: 30px;
+    }
+
+    .hero-content h1 {
+        font-size: 3rem; /* Diminui um pouco o título fixo */
+    }
+
+    .hero-image img {
+        width: 80%; /* Aumenta a proporção da imagem já que a tela encolheu */
+    }
+}
+
+/* Celulares e Tablets Verticais (até 768px) */
+@media (max-width: 768px) {
+    
+    /* NAVBAR MOBILE */
+    .nav-hamburguer {
+        display: flex; /* Mostra o botão hambúrguer */
+    }
+
+    .nav-hamburguer span {
+        background-color: #402516; /* Garante que as linhas apareçam */
+    }
+
+    .nav-links {
+        position: fixed;
+        top: 64px; /* Altura exata do seu header */
+        right: -100%; /* Esconde o menu fora da tela */
+        background-color: #DADCBD;
+        width: 100%;
+        height: calc(100vh - 64px);
+        flex-direction: column;
+        justify-content: center;
+        gap: 40px;
+        transition: 0.4s ease-in-out;
+        z-index: 99;
+    }
+
+    /* Classe que o JavaScript vai ativar */
+    .nav-links.aberto {
+        right: 0;
+    }
+
+    .nav-btn {
+        width: 200px;
+        text-align: center;
+    }
+
+    /* HERO MOBILE */
+    #hero {
+        flex-direction: column-reverse; /* Imagem em cima, texto embaixo */
+        justify-content: center;
+        text-align: center;
+        padding: 80px 5%;
+        align-items: center;
+    }
+
+    .tag-social {
+        flex-direction: row; /* Ícones sociais ficam na horizontal */
+        margin-right: 0;
+        margin-bottom: 40px;
+        gap: 50px;
+    }
+
+    .hero-content {
+        align-items: center; /* Centraliza a frase e o botão no mobile */
+        text-align: center;
+        max-width: 100%;
+    }
+
+    .hero-content h1 {
+        font-size: 2.2rem;
+        text-align: center;
+        margin-bottom: 25px;
+    }
+
+    .hero-btn {
+        align-self: center; /* Garante o botão no centro */
+    }
+
+    .hero-image {
+        justify-content: center;
+        margin-bottom: 40px;
+    }
+
+    .hero-image img {
+        width: 60%; /* Logo não fica gigante no celular */
+        max-width: 250px;
+    }
+}
+
+/* Celulares Pequenos (até 480px) */
+@media (max-width: 480px) {
+    .nav-logo-nome {
+        font-size: 14px; /* Diminui o nome para não bater no hambúrguer */
+    }
+
+    .hero-content h1 {
+        font-size: 1.8rem;
+    }
+}
+
 
 /* ===================== */
 /* 💻 TELAS GRANDES (até 1200px) */
