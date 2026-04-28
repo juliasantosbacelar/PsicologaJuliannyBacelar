@@ -216,7 +216,7 @@ body.no-scroll {
 
 
 /* CONTAINER PRINCIPAL */
-.contato {
+#contato {
     width: auto;
     min-height: 20rem;
     padding: 2.5rem;
@@ -233,16 +233,17 @@ body.no-scroll {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    max-width: 500px;
+    max-width: 400px;
+    margin-left: 5rem;
 }
 
-.contato h2 {
+#contato h2 {
     font-weight: normal;
-    font-size: 3.5rem;
+    font-size: 2.5rem;
 }
 
 /* BOTÃO */
-.contato button {
+#contato button {
     background-color: transparent;
     border: var(--borda);
     color: var(--bege);
@@ -253,17 +254,17 @@ body.no-scroll {
     font-size: 1.2rem;
 }
 
-.contato button:hover {
+#contato button:hover {
     background-color: var(--bege);
     color: var(--marromEscuro);
     cursor: pointer;
 }
 
 /* BLOCO DA DIREITA */
-.contato > .contato {
+#contato > .contato {
     display: flex;
     align-items: center;
-    gap: 5rem;
+    gap: 10rem;
 }
 
 /* IMAGEM */
