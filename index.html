@@ -10,7 +10,7 @@
     <meta property="og:type" content="website" />
     <title>Psicóloga — Julianny Bacelar</title>
     <link rel="stylesheet" href="main.css">
-    <link rel="icon" type="image/svg+xml" href="img/logo.svg">
+    <link rel="icon" type="image/svg+xml" href="img/logo_bege.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 
@@ -22,22 +22,27 @@
         <nav class="navbar">
             <div class="nav-logo-wrap">
                 <div class="logo-avatar" id="logoAvatar">
-                    <img src="img/logo.svg">
+                    <img src="img/logo_jb_sem_fundo.png" alt="Logo da Julianny Bacelar Psicóloga">
                 </div>
                 <a class="nav-logo-nome" href="#hero">Julianny Bacelar</a>
             </div>
 
-            <button class="nav-hamburguer" id="navToggle" aria-label="Abrir menu">
+            <button type="button" class="nav-hamburguer" id="navToggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="primary-navigation">
                 <span></span><span></span><span></span>
             </button>
 
-            <ul class="nav-links">
+            <ul class="nav-links" id="primary-navigation">
+                <li class="nav-modal-close-item">
+                    <button type="button" class="nav-modal-close" id="navModalClose" aria-label="Fechar menu">
+                        <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+                    </button>
+                </li>
                 <li><a href="#sobre-mim">Sobre Mim</a></li>
                 <li><a href="#servicos">Serviços</a></li>
                 <li><a href="#area-de-atuacao">Área de Atuação</a></li>
                 <li><a href="#processo">Processo</a></li>
                 <li><a href="#contato">Contato</a></li>
-                <button class="nav-btn"><a href="#contato">Agendar</a></button>
+                <li class="nav-cta-item"><a class="nav-btn" href="#contato">Agendar</a></li>
             </ul>
         </nav>
     </header>
@@ -58,12 +63,12 @@
             </button>
         </div>
         <div class="hero-image">
-            <img src="img/logoHero.svg" alt="Imagem da logo que são as iniciais dapsicóloga Julianny Bacelar">
+            <img src="img/logo_bege.png" alt="Imagem da logo que são as iniciais dapsicóloga Julianny Bacelar">
         </div>
     </section>
 
     <!--Sobre Mim-->
-    <section id="sobre-mim">
+    <section id="sobre-mim" class="reveal">
         <div id="sobre-mim-image">
             <img src="img/Ju1.png" alt="Imagem Julianny Bacelar">
         </div>
@@ -74,14 +79,12 @@
             <p id="sobre-mim-decription">Bacharel em Psicologia, graduada esm 2024, atualmente tenho 25 anos e ofereço
                 atendimento psicoterapêutico online para o público adulto e presencial para crianças neurotípicas. Além
                 disso, atuo com acompanhamento terapêutica voltado a crianças neuroatípicas.</p>
-            <div id="sobre-mim-ramo">
-                <img src="img/ramo teste.png" alt="Imagem de um ramo de árvore">
-            </div>
+        
         </div>
     </section>
 
     <!--Serviços-->
-    <section id="servicos" aria-labelledby="servicos-titulo">
+    <section id="servicos" class="reveal reveal--delay-1" aria-labelledby="servicos-titulo">
         <h1 id="servicos-titulo">Serviços</h1>
         <p id="servicos-intro" class="servicos-intro">Selecione um serviço para ver como conduzo o atendimento, com transparência e acolhimento.</p>
         <div id="servicos-content" class="servicos-accordion">
@@ -141,7 +144,7 @@
     </section>
 
     <!--Área de Atuação-->
-    <section id="area-de-atuacao" aria-labelledby="area-de-atuacao-titulo">
+    <section id="area-de-atuacao" class="reveal" aria-labelledby="area-de-atuacao-titulo">
         <h1 id="area-de-atuacao-titulo">Minhas Abordagens</h1>
         <div id="abordagem-type">
             <div class="abordagem-flip" tabindex="0" role="group" aria-labelledby="abordagem-tcc-label">
@@ -178,7 +181,7 @@
 
     </section>
     <!--Processo-->
-    <section id="processo">
+    <section id="processo" class="reveal reveal--delay-1">
         <div id="processo-content">
             <section id="processo-imagem">
                 <img src="img/Ju2.png" alt="Imagem Julianny Bacelar">
@@ -219,7 +222,7 @@
 
 
     <!--Analise-->
-    <section id="contato">
+    <section id="contato" class="reveal">
 
         <section class="contato-texto">
             <h2>Você não precisa enfrentar seus desafios sozinho!</h2>
@@ -243,8 +246,8 @@
 
     </section>
 
-    <footer>
-        <img src="img/Logo.png" alt="Logo da Julianny Bacelar Psicóloga">
+    <footer class="reveal reveal--delay-2">
+        <img src="img/logo_jb_sem_fundo.png" alt="Logo da Julianny Bacelar Psicóloga">
         <address>
             <p>Julianny Bacelar</p>
             <ul>
@@ -267,6 +270,7 @@
 
     <p class="direito">@copyrigth Julianny Bacelar</p>
 
+    <script src="style.js" defer></script>
 </body>
 
 </html>
