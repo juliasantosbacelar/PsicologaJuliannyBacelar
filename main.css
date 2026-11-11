@@ -136,7 +136,7 @@ header::before {
     position: absolute;
     inset: 0;
     z-index: 0;
-    background-color: #DADCBD;
+    background-color: #F2EDD0;
     backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);
     pointer-events: none;
@@ -150,6 +150,8 @@ header::before {
     z-index: 2;
     padding: 0 max(4%, env(safe-area-inset-right, 0)) 0 max(4%, env(safe-area-inset-left, 0));
     min-height: var(--nav-h);
+    padding-top: 20px;
+    padding-bottom: 20px;
     max-width: 100%;
     margin: 0;
 }
@@ -158,7 +160,7 @@ header::before {
 .nav-logo-wrap {
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 80px;
     text-decoration: none;
     color:#000000;
     
@@ -168,7 +170,7 @@ header::before {
 /* Quadrado do avatar na logo */
 .logo-avatar {
     width: 48px; 
-    height: 48px;
+    height: 58px;
     border-radius: 999px;
     overflow: hidden;
     position: relative;
@@ -181,7 +183,6 @@ header::before {
 /* o Julianny Bacelar do navbar */
 .nav-logo-nome {
     font-size: 16px;
-    font-weight: 700;
     color: #000000;
     text-decoration: none;
     margin-top: 0;
@@ -189,7 +190,7 @@ header::before {
 .nav-links {
     display: flex;
     align-items: center;
-    gap: 32px;
+    gap: 62px;
     list-style: none;
     margin: 0;
     padding: 0;
@@ -197,7 +198,6 @@ header::before {
 
 .nav-links a {
     font-size: 14px;
-    font-weight: 600;
     color: #000;
     text-decoration: none;
     transition:
@@ -226,14 +226,13 @@ header::before {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    background-color: #DADCBD;
-    border: 1px solid #402516;
+    background-color: transparent;
+    border: 1.5px solid #402516;
     color: #402516;
-    padding: 10px 24px;
+    padding: 0px 24px;
     min-height: 48px;
     border-radius: 999px;
     font-size: 12px;
-    font-weight: 700;
     text-decoration: none;
     transition:
         background-color var(--motion-duration-soft) var(--motion-ease-out),
