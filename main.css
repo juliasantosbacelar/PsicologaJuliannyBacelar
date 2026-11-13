@@ -421,7 +421,7 @@ header::before {
     padding: 14px 32px;
     border: 1px solid #DADCBD;
     border-radius: 999px;
-    color: #DADCBD;
+    color: #D9D4C5;
     text-decoration: none;
     width: 50%;
     text-transform: uppercase;
@@ -890,11 +890,29 @@ footer li img:hover {
 
 /* Área Minha Abordagem*/
 
-#area-de-atuacao-titulo {
+#area-de-atuacao {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 50px;
+    padding: 20px 70px 70px 70px;    
+    background-color: #402516;
+    color: #F2EDD0;
+}
+
+#area-de-atuacao h2 {
+    font-size: 35px;
+    font-weight: normal;
+}
+
+#area-de-atuacao p {
+    max-width: 50%;
     text-align: center;
-    margin-top: 58px;
-    margin-bottom: 42px;
-    color: var(--marromEscuro);
+    font-size: 15px;
+}
+#area-de-atuacao p:nth-of-type(2) {
+    font-size: 20px;
 }
 
 .abordagem-hint {
@@ -1026,6 +1044,7 @@ footer li img:hover {
         margin-top: -12px;
     }
 }
+
 #processo-content h1 {
     color: var(--marromEscuro);
     margin-top: clamp(2rem, 6vw, 105px);
@@ -1039,6 +1058,7 @@ footer li img:hover {
     justify-content: space-between;
     gap: 60px;
 }
+
 
 #processo-imagem img {
     width: 550px;
@@ -1064,6 +1084,23 @@ footer li img:hover {
 .processo-card {
     padding: 0 24px;
     width: 400px;
+}
+
+.processo-card .processo-subtitulo button {
+    padding: 10px 30px 10px 30px;
+}
+/* Botão Online */
+.processo-card:nth-of-type(1) .processo-subtitulo button {
+    color: #402516;
+    border: 1px solid #402516;
+    background-color: #40251640;
+}
+
+/* Botão Presencial */
+.processo-card:nth-of-type(2) .processo-subtitulo button {
+    color: #A66C4B;
+    border: solid 1px #A66C4B;
+    background-color: #a66c4b82;
 }
 
 .processo-card + .processo-card {
