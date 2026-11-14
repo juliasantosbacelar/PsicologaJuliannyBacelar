@@ -1,7 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Quicksand:wght@300..700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
 
 :root {
-  --fundo: #F2EDD0;
   --marromEscuro: #402516;
   --marromClaro: #A66C4B;
   --bege: #F2EDD0;
@@ -19,8 +18,9 @@
 
 html {
   overflow-x: clip;
-  scrollbar-color: var(--marromEscuro) var(--fundo);
+  scrollbar-color: var(--marromEscuro) var(--bege);
   scrollbar-width: thin;
+  color: #583222;
 }
 
 html::-webkit-scrollbar {
@@ -29,13 +29,13 @@ html::-webkit-scrollbar {
 }
 
 html::-webkit-scrollbar-track {
-  background: var(--fundo);
+  background: var(--bege);
 }
 
 html::-webkit-scrollbar-thumb {
   background: var(--marromEscuro);
   border-radius: 999px;
-  border: 3px solid var(--fundo);
+  border: 3px solid var(--bege);
 }
 
 html::-webkit-scrollbar-thumb:hover {
@@ -43,7 +43,7 @@ html::-webkit-scrollbar-thumb:hover {
 }
 
 html::-webkit-scrollbar-corner {
-  background: var(--fundo);
+  background: var(--bege);
 }
 
 @supports not (overflow: clip) {
@@ -70,9 +70,9 @@ body {
   margin: 0;
   padding: 0;
   font-family: var(--fonte);
-  background-color: var(--fundo);
+  background-color: var(--bege);
   overflow-x: clip;
-  scrollbar-color: var(--marromEscuro) var(--fundo);
+  scrollbar-color: var(--marromEscuro) var(--bege);
   scrollbar-width: thin;
 }
 
@@ -82,13 +82,13 @@ body::-webkit-scrollbar {
 }
 
 body::-webkit-scrollbar-track {
-  background: var(--fundo);
+  background: var(--bege);
 }
 
 body::-webkit-scrollbar-thumb {
   background: var(--marromEscuro);
   border-radius: 999px;
-  border: 3px solid var(--fundo);
+  border: 3px solid var(--bege);
 }
 
 body::-webkit-scrollbar-thumb:hover {
@@ -96,7 +96,7 @@ body::-webkit-scrollbar-thumb:hover {
 }
 
 body::-webkit-scrollbar-corner {
-  background: var(--fundo);
+  background: var(--bege);
 }
 
 body::selection {
@@ -133,7 +133,7 @@ header::before {
   position: absolute;
   inset: 0;
   z-index: 0;
-  background-color: #F2EDD0;
+  background-color: var(--bege);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   pointer-events: none;
@@ -201,7 +201,7 @@ header::before {
 }
 
 .nav-links a:hover {
-  color: #402516;
+  color: var(--marromEscuro);
   opacity: 0.92;
 }
 
@@ -222,8 +222,8 @@ header::before {
   align-items: center;
   justify-content: center;
   background-color: transparent;
-  border: 1.5px solid #402516;
-  color: #402516;
+  border: 1.5px solid var(--marromEscuro);
+  color:var(--marromEscuro);
   padding: 0px 24px;
   min-height: 48px;
   border-radius: 999px;
@@ -286,7 +286,7 @@ header::before {
 
 /*HERO*/
 * #hero {
-  background-color: #402516;
+  background-color: var(--marromEscuro);
   min-height: 100vh;
   min-height: 100dvh;
   display: flex;
@@ -309,7 +309,7 @@ header::before {
   margin-top: 19px;
   border-radius: 999px;
   border: none;
-  color: #402516;
+  color:--marromEscuro;
   text-decoration: none;
   text-transform: uppercase;
   font-size: 13px;
@@ -382,7 +382,7 @@ header::before {
 }
 
 .hero-btn {
-  background-color: #402516;
+  background-color: var(--marromEscuro);
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -416,7 +416,7 @@ header::before {
 }
 
 .hero-btn-agende a {
-  color: #402516;
+  color: var(--marromEscuro);
   text-decoration: none;
 }
 
@@ -524,8 +524,8 @@ header::before {
 }
 
 .servico-card:hover {
-  background-color: #A66C4B;
-  color: #402516;
+  background-color: var(--marromClaro);
+  color: var(--marromEscuro);
   font-weight: 700;
   transition: 0.5s;
 }
@@ -808,18 +808,17 @@ header::before {
 
 /* Botão Online */
 * .psicoterapia-card:nth-of-type(1) .psicoterapia-subtitulo button {
-  color: #402516;
-  border: 1px solid #402516;
-  background-color: #40251640;
+  color: var(--marromEscuro);
+  border: 1px solid var(--marromEscuro);
+  background-color: #40251628;
 }
-
 *
 
 /* Botão Presencial */
 * .psicoterapia-card:nth-of-type(2) .psicoterapia-subtitulo button {
-  color: #A66C4B;
-  border: solid 1px #A66C4B;
-  background-color: #a66c4b82;
+  color:var(--marromClaro);
+  border: solid 1pxvar(--marromClaro);
+  background-color: #a66c4b51;
 }
 
 .psicoterapia-card+.psicoterapia-card {
@@ -898,8 +897,8 @@ header::before {
   align-items: center;
   margin-top: 50px;
   padding: 20px 70px 70px 70px;
-  background-color: #402516;
-  color: #F2EDD0;
+  background-color: var(--marromEscuro);
+  color: var(--bege);
 }
 
 #abordagem h2 {
@@ -1018,44 +1017,6 @@ header::before {
   text-align: center;
 }
 
-.sobre-mim-btn {
-  background-color: #4025162d;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 14px 32px;
-  border: 1px solid #402516;
-  border-radius: 999px;
-  color: #402516;
-  text-decoration: none;
-  font-size: 13px;
-  margin-top: 15px;
-  transition: background-color var(--motion-duration-soft) var(--motion-ease-out),
-
-
-
-    border-color var(--motion-duration-soft) var(--motion-ease-out),
-
-
-
-    color var(--motion-duration-soft) var(--motion-ease-out),
-
-
-
-    box-shadow var(--motion-duration-soft) var(--motion-ease-out),
-
-
-
-    transform var(--motion-duration-soft) var(--motion-ease-out);
-}
-
-.sobre-mim-btns {
-  display: flex;
-  gap: 12px;
-}
-
-*
-
 /* Sobre Mim */
 * #sobre-mim {
   display: flex;
@@ -1139,6 +1100,31 @@ header::before {
   width: 100%;
   height: auto;
 }
+
+.sobre-mim-btn {
+  background-color: var(--marromEscuro);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 14px 32px;
+  border: 1px solid var(--marromEscuro);
+  border-radius: 999px;
+  color: var(--bege);
+  text-decoration: none;
+  font-size: 13px;
+  margin-top: 15px;
+  transition: background-color var(--motion-duration-soft) var(--motion-ease-out),
+    border-color var(--motion-duration-soft) var(--motion-ease-out),
+    color var(--motion-duration-soft) var(--motion-ease-out),
+    box-shadow var(--motion-duration-soft) var(--motion-ease-out),
+    transform var(--motion-duration-soft) var(--motion-ease-out);
+}
+
+.sobre-mim-btns {
+  display: flex;
+  gap: 12px;
+}
+
 
 *
 /* Remover sublinhado e cor azul padrão dos links na seção de contato e no footer */
@@ -1439,15 +1425,15 @@ img {
 }
 
 .online-btn {
-  background-color: #4025162d;
+  background-color: var(--marromEscuro);
   display: inline-flex;
   align-items: center;
   justify-content: center;
   padding: 14px 32px;
-  border: 1px solid #402516;
+  border: 1px solid var(--marromEscuro);
   width: 155px;
   border-radius: 999px;
-  color: #402516;
+  color: var(--marromEscuro);
   text-decoration: none;
   font-size: 13px;
   margin-top: 15px;
@@ -1471,7 +1457,7 @@ img {
 }
 
 .presencial-aba-btn {
-  background-color: #a66c4b28;
+  background-color:var(--marromClaro)28;
   display: inline-flex;
   align-items: center;
   justify-content: center;
