@@ -890,7 +890,7 @@ footer li img:hover {
 
 /* Área Minha Abordagem*/
 
-#area-de-atuacao {
+#abordagem {
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -901,17 +901,17 @@ footer li img:hover {
     color: #F2EDD0;
 }
 
-#area-de-atuacao h2 {
+#abordagem h2 {
     font-size: 35px;
     font-weight: normal;
 }
 
-#area-de-atuacao p {
+#abordagem p {
     max-width: 50%;
     text-align: center;
     font-size: 15px;
 }
-#area-de-atuacao p:nth-of-type(2) {
+#abordagem p:nth-of-type(2) {
     font-size: 20px;
 }
 
@@ -1033,7 +1033,7 @@ footer li img:hover {
         height: 252px;
     }
 
-    #area-de-atuacao-titulo {
+    #abordagem-titulo {
         margin-top: 2.5rem;
         margin-bottom: 1.75rem;
         font-size: clamp(1.75rem, 5vw, 2rem);
@@ -1045,14 +1045,14 @@ footer li img:hover {
     }
 }
 
-#processo-content h1 {
+#psicoterapia-content h1 {
     color: var(--marromEscuro);
     margin-top: clamp(2rem, 6vw, 105px);
     margin-bottom: 30px;
     font-size: clamp(1.65rem, 4vw, 2.25rem);
     line-height: 1.2;
 }
-#processo-content {
+#psicoterapia-content {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -1060,54 +1060,54 @@ footer li img:hover {
 }
 
 
-#processo-imagem img {
+#psicoterapia-imagem img {
     width: 550px;
     height: 675px;
     object-fit: cover;
     border-radius: 250px;
 }
 
-#processo-value {
+#psicoterapia-value {
     align-items: center;
 }
 
-#processo-value h1 {
+#psicoterapia-value h1 {
     text-align: center;
     margin-bottom: 60px;
 }
 
-#processo-caixa {
+#psicoterapia-caixa {
     display: grid;
     grid-template-columns: 1fr 1fr;
 }
 
-.processo-card {
+.psicoterapia-card {
     padding: 0 24px;
     width: 400px;
 }
 
-.processo-card .processo-subtitulo button {
+.psicoterapia-card .psicoterapia-subtitulo button {
     padding: 10px 30px 10px 30px;
 }
 /* Botão Online */
-.processo-card:nth-of-type(1) .processo-subtitulo button {
+.psicoterapia-card:nth-of-type(1) .psicoterapia-subtitulo button {
     color: #402516;
     border: 1px solid #402516;
     background-color: #40251640;
 }
 
 /* Botão Presencial */
-.processo-card:nth-of-type(2) .processo-subtitulo button {
+.psicoterapia-card:nth-of-type(2) .psicoterapia-subtitulo button {
     color: #A66C4B;
     border: solid 1px #A66C4B;
     background-color: #a66c4b82;
 }
 
-.processo-card + .processo-card {
+.psicoterapia-card + .psicoterapia-card {
     border-left: 1px solid #DADCBD;
 }
 
-.processo-subtitulo {
+.psicoterapia-subtitulo {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -1116,13 +1116,13 @@ footer li img:hover {
     max-width: 100%;
 }
 
-.processo-card p {
+.psicoterapia-card p {
     line-height: 1.4;
     text-align: left;
     font-size: 20.5px;
 }
 
-.processo-subtitulo button {
+.psicoterapia-subtitulo button {
     border: 1px solid var(--marromEscuro);
     border-radius: 20px;
     padding: 5px 20px;
@@ -1130,7 +1130,7 @@ footer li img:hover {
     font-size: 0.75rem;
 }
 
-.processo-category {
+.psicoterapia-category {
     display: flex;
     justify-content: flex-start;
     color: var(--marromEscuro);
@@ -1141,7 +1141,7 @@ footer li img:hover {
     gap: 12px;
 }
 
-.processo-category-icon {
+.psicoterapia-category-icon {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -1154,15 +1154,15 @@ footer li img:hover {
     border-radius: 999px;
 }
 
-.processo-category-text h2, .processo-category-text p {
+.psicoterapia-category-text h2, .psicoterapia-category-text p {
     margin: 0;
 }
 
-.processo-category-text p {
+.psicoterapia-category-text p {
     margin-top: 6px;
 }
 
-.processo-category-text {
+.psicoterapia-category-text {
     display: flex;
     flex-direction: column;
 }
@@ -1758,7 +1758,7 @@ footer li img:hover {
         opacity: 0.9;
     }
 
-    #processo-imagem img {
+    #psicoterapia-imagem img {
         max-width: 100%;
         width: 100%;
         height: auto;
@@ -2105,7 +2105,7 @@ footer li img:hover {
         display: none;
     }
 
-    #processo-value > p:first-of-type {
+    #psicoterapia-value > p:first-of-type {
         margin-bottom: 0.5rem;
     }
 
@@ -2146,17 +2146,17 @@ footer li img:hover {
 }
 
 @media (max-width: 900px) {
-    #processo {
+    #psicoterapia {
         padding-inline: var(--section-inline);
     }
 
-    #processo-content {
+    #psicoterapia-content {
         flex-direction: column;
         align-items: center;
         padding-bottom: clamp(2rem, 5vw, 3rem);
     }
 
-    #processo-imagem {
+    #psicoterapia-imagem {
         order: -1;
         margin-top: 0;
         margin-bottom: 1rem;
@@ -2164,7 +2164,7 @@ footer li img:hover {
         max-width: min(320px, 88vw);
     }
 
-    #processo-imagem img {
+    #psicoterapia-imagem img {
         max-width: 100%;
         width: 100%;
         height: auto;
@@ -2172,21 +2172,21 @@ footer li img:hover {
         margin-inline: auto;
     }
 
-    #processo-content h1 {
+    #psicoterapia-content h1 {
         margin-top: 1.5rem;
         text-align: center;
     }
 
-    #processo-value {
+    #psicoterapia-value {
         max-width: 100%;
         text-align: center;
     }
 
-    #processo-value > p:first-of-type {
+    #psicoterapia-value > p:first-of-type {
         margin-bottom: 0.5rem;
     }
 
-    .processo-category {
+    .psicoterapia-category {
         max-width: 36rem;
         margin-left: auto;
         margin-right: auto;
@@ -2362,7 +2362,7 @@ footer li img:hover {
         margin-right: auto;
     }
 
-    #processo-content {
+    #psicoterapia-content {
         max-width: var(--layout-max);
         margin-inline: auto;
         padding-inline: var(--section-inline);
