@@ -59,12 +59,14 @@ body {
 
 *,
 *::before,
-
-
-
 *::after {
   box-sizing: border-box;
 }
+
+*:focus {
+    padding: 5px;
+    border: var(--marromEscuro) 2px solid;
+    box-shadow: rgba(141, 121, 60, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;}
 
 body {
   margin: 0;
@@ -104,15 +106,13 @@ body::selection {
   color: var(--marromEscuro);
 }
 
-*
 
 /*serve pra n rolar a pág por baixo do menu aberto*/
-* body.no-scroll {
+body.no-scroll {
   overflow: hidden;
 }
 
 /*tenho que colocar as variaveis de cor e fonte pra cada elemento, porque o header tem um background com blur, então se eu colocar a cor do texto do header como var(--marromEscuro) ele fica meio transparente e difícil de ler, por isso coloquei a cor do texto do header como #000000 mesmo, pra garantir que fique legível*/
-* 
 
 header {
   position: sticky;
@@ -139,6 +139,8 @@ header::before {
   pointer-events: none;
 }
 
+/*NAVBAR*/
+
 /*logo + julianny bacelar*/
 .nav-logo-wrap {
   display: flex;
@@ -149,7 +151,7 @@ header::before {
 }
 
 /* Quadrado do avatar na logo */
-* .logo-avatar {
+.logo-avatar {
   width: 48px;
   height: 58px;
   border-radius: 999px;
@@ -162,7 +164,7 @@ header::before {
 }
 
 /* o Julianny Bacelar do navbar */
-* .navbar {
+.navbar {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -202,6 +204,7 @@ header::before {
 
 .nav-links a:hover {
   color: var(--marromEscuro);
+  font-weight: 700;
   opacity: 0.92;
 }
 
@@ -236,15 +239,15 @@ header::before {
 }
 
 .nav-btn:hover {
-  transform: translateY(-1px);
-  background-color: rgba(64, 37, 22, 0.08);
-  box-shadow: 0 6px 18px rgba(64, 37, 22, 0.12);
+  transition: 1s;
+  font-weight: 700;
+  box-shadow: rgba(70, 5, 5, 0.16) 0px 10px 36px 0px, rgba(65, 36, 6, 0.06) 0px 0px 0px 1px; 
+  background-color: var(--marromClaro);
 }
 
-*
 
 /* Hamburguer */
-* .nav-hamburguer {
+.nav-hamburguer {
   display: none;
   flex-direction: column;
   justify-content: center;
@@ -267,10 +270,8 @@ header::before {
   transition: all 0.3s;
 }
 
-*
-
 /*animação do hamburguer para o X*/
-* .nav-hamburguer.ativo span:nth-child(1) {
+.nav-hamburguer.ativo span:nth-child(1) {
   transform: translateY(7px) rotate(45deg);
 }
 
@@ -282,10 +283,8 @@ header::before {
   transform: translateY(-7px) rotate(-45deg);
 }
 
-*
-
 /*HERO*/
-* #hero {
+#hero {
   background-color: var(--marromEscuro);
   min-height: 100vh;
   min-height: 100dvh;
@@ -381,8 +380,8 @@ header::before {
   display: block;
 }
 
-.hero-btn {
-  background-color: var(--marromEscuro);
+.hero-btns .hero-btn {
+  background-color: transparent;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -401,15 +400,14 @@ header::before {
     transform var(--motion-duration-soft) var(--motion-ease-out);
 }
 
-.hero-btn:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18);
+.hero-btns .hero-btn:hover{
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18);
+    color: var(--marromEscuro);
+    background-color: var(--marromClaro);
 }
 
-*
-
-/*.hero-btn:hover{tem que fazer algo para que entendam que é um link/botão clicável}*/
-* .hero-btn a {
+.hero-btn a {
   color: #DADCBD;
   text-decoration: none;
   font-size: 11px;
@@ -418,6 +416,11 @@ header::before {
 .hero-btn-agende a {
   color: var(--marromEscuro);
   text-decoration: none;
+}
+
+#hero .hero-btn-agende:hover{
+    font-weight: 700;
+    background-color: #aeb096;
 }
 
 .tag-social {
@@ -471,20 +474,17 @@ header::before {
   animation-delay: calc(var(--motion-stagger-step) * 2.5);
 }
 
+/* Serviços */
+
 #servicos>p:first-of-type {
   color: var(--marromEscuro);
   text-align: center;
   margin-top: 40px;
 }
 
-*
 
-/* Serviços *
-
-
-
-**    background-color: var(--marromEscuro);  */
-* #servicos-titulo {
+/*background-color: var(--marromEscuro);  */
+#servicos-titulo {
   color: var(--marromEscuro);
   font-size: 36px;
   text-align: center;
@@ -528,6 +528,7 @@ header::before {
   color: var(--marromEscuro);
   font-weight: 700;
   transition: 0.5s;
+  box-shadow: rgba(154, 80, 16, 0.331) 0px 48px 100px 0px;
 }
 
 .servico-card p {
@@ -759,6 +760,8 @@ header::before {
   padding-top: 16px;
 }
 
+/*PSICOTERAPIA*/
+
 #psicoterapia-content h1 {
   color: var(--marromEscuro);
   margin-top: clamp(2rem, 6vw, 105px);
@@ -889,7 +892,7 @@ header::before {
 
 *
 
-/* Área Minha Abordagem*/
+/*Abordagem*/
 * #abordagem {
   display: flex;
   justify-content: center;
@@ -1017,7 +1020,7 @@ header::before {
   text-align: center;
 }
 
-/* Sobre Mim */
+/* SOBRE MIM */
 * #sobre-mim {
   display: flex;
   flex-wrap: wrap;
@@ -1125,30 +1128,21 @@ header::before {
   gap: 12px;
 }
 
+/*CONTATO*/
 
-*
 /* Remover sublinhado e cor azul padrão dos links na seção de contato e no footer */
-* .contato a,
-
-
-
+.contato a,
 footer a {
   color: inherit;
   text-decoration: none;
 }
 
 .contato a:visited,
-
-
-
 footer a:visited {
   color: inherit;
 }
 
 .contato a:hover,
-
-
-
 footer a:hover {
   text-decoration: none;
   filter: brightness(1.05);
@@ -1203,9 +1197,6 @@ footer a:hover {
 *
 /* BOTÃO */
 * .contato-btn,
-
-
-
 #contato button {
   background-color: transparent;
   border: var(--borda);
@@ -1240,9 +1231,6 @@ footer a:hover {
 }
 
 .contato-btn:hover,
-
-
-
 #contato button:hover {
   background-color: var(--bege);
   color: var(--marromEscuro);
@@ -1320,6 +1308,8 @@ footer a:hover {
   font-size: 0.875rem;
 }
 
+/*FOOTER*/
+
 footer {
   display: flex;
   flex-direction: column;
@@ -1337,9 +1327,6 @@ footer img {
 }
 
 footer address ul li img,
-
-
-
 footer>ul li img {
   width: 1.25rem;
   height: 1.25rem;
@@ -1438,21 +1425,9 @@ img {
   font-size: 13px;
   margin-top: 15px;
   transition: background-color var(--motion-duration-soft) var(--motion-ease-out),
-
-
-
     border-color var(--motion-duration-soft) var(--motion-ease-out),
-
-
-
     color var(--motion-duration-soft) var(--motion-ease-out),
-
-
-
     box-shadow var(--motion-duration-soft) var(--motion-ease-out),
-
-
-
     transform var(--motion-duration-soft) var(--motion-ease-out);
 }
 
@@ -1470,21 +1445,9 @@ img {
   font-size: 13px;
   margin-top: 15px;
   transition: background-color var(--motion-duration-soft) var(--motion-ease-out),
-
-
-
     border-color var(--motion-duration-soft) var(--motion-ease-out),
-
-
-
     color var(--motion-duration-soft) var(--motion-ease-out),
-
-
-
     box-shadow var(--motion-duration-soft) var(--motion-ease-out),
-
-
-
     transform var(--motion-duration-soft) var(--motion-ease-out);
 }
 
@@ -1504,9 +1467,6 @@ img {
   opacity: 0;
   transform: translate3d(0, 14px, 0);
   transition: opacity var(--motion-duration-medium) var(--motion-ease-out),
-
-
-
     transform var(--motion-duration-medium) var(--motion-ease-out);
 }
 
@@ -1534,6 +1494,8 @@ img {
     transform: translateY(0);
   }
 }
+
+/*RESPONSIVIDADE*/
 
 @media (prefers-reduced-motion: reduce) {
   :root {
