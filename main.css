@@ -16,6 +16,60 @@
   --motion-stagger-step: 0.1s;
 }
 
+/*Botões de alto contraste e aumento/diminui fonte*/
+
+.acessibilidade {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    z-index: 9999;
+}
+
+.acessibilidade button {
+    width: 45px;
+    height: 45px;
+    border: 2px solid #333;
+    border-radius: 8px;
+    background: #fff;
+    color: #222;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.acessibilidade button:hover {
+    background: #ddd;
+}
+
+/* Alto contraste */
+.alto-contraste {
+    background: #000 !important;
+    color: #fff !important;
+}
+
+
+.alto-contraste::selection {
+    color: #ffff00 !important;
+    background-color: #fff !important;
+}
+.alto-contraste button {
+    border: solid 1px #ffff00;
+}
+
+.alto-contraste * {
+    background-color: #000 !important;
+    color: #fff !important;
+    border-color: #ffff00 !important;
+}
+
+.alto-contraste a {
+    color: #ffff00 !important;
+}
+
 html {
   overflow-x: clip;
   scrollbar-color: var(--marromEscuro) var(--bege);

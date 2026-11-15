@@ -141,3 +141,32 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 });
+
+//Botões de alto contraste e aumento/diminui fonte
+
+const contraste = document.getElementById("contraste");
+const aumentar = document.getElementById("aumentar-fonte");
+const diminuir = document.getElementById("diminuir-fonte");
+
+let tamanhoFonte = 16;
+
+// Alto contraste
+contraste.addEventListener("click", () => {
+    document.body.classList.toggle("alto-contraste");
+});
+
+// Aumentar fonte
+aumentar.addEventListener("click", () => {
+    if (tamanhoFonte < 24) {
+        tamanhoFonte += 2;
+        document.documentElement.style.fontSize = tamanhoFonte + "px";
+    }
+});
+
+// Diminuir fonte
+diminuir.addEventListener("click", () => {
+    if (tamanhoFonte > 12) {
+        tamanhoFonte -= 2;
+        document.documentElement.style.fontSize = tamanhoFonte + "px";
+    }
+});
