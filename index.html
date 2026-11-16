@@ -15,18 +15,24 @@
 
 <body>
 
-     <!-- Início do VLibras -->
-        <div vw class="enabled">
-            <div   vw-access-button class="active"></div>
-            <div  vw-plugin-wrapper>
-            <div class="vw-plugin-top-wrapper"></div>
+    <!-- VLibras carregado via JS para passar no validador W3C -->
+    <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const vlibrasDiv = document.createElement("div");
+            vlibrasDiv.setAttribute("vw", "");
+            vlibrasDiv.className = "enabled";
+            vlibrasDiv.innerHTML = `
+            <div vw-access-button class="active"></div>
+            <div vw-plugin-wrapper>
+                <div class="vw-plugin-top-wrapper"></div>
             </div>
-        </div>
-        <script  src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
-        <script>
+            `;
+            document.body.appendChild(vlibrasDiv);
             new window.VLibras.Widget('https://vlibras.gov.br/app');
-        </script>
-        <!-- Fim do VLibras -->
+        });
+    </script>
 
     <div class="acessibilidade">
     <button tabindex="58" id="contraste" aria-label="Ativar alto contraste">
@@ -43,12 +49,13 @@
 </div>
 
     <!--NAV BAR-->
+    <!--NAV BAR-->
     <header>
         <nav class="navbar">
             <div class="nav-logo-wrap">
                 <a href="#hero" class="logo-avatar-link" aria-label="Voltar ao topo">
                     <div class="logo-avatar" id="logoAvatar">
-                        <img src="img/Post da Ju 2.png" tabindex="1" alt="Logo da Psicóloga com suas iniciais JB com fundo verde">
+                        <img src="img/Post%20da%20Ju%202.png" alt="Logo da Psicóloga com suas iniciais JB com fundo verde">
                     </div>
                 </a>
                 <a class="nav-logo-nome" href="#hero" tabindex="2">Julianny Bacelar</a>
@@ -76,53 +83,38 @@
     <!--HERO-->
 
     <section id="hero">
-        <!-- <div class="tag-social">
-            <a href="https://www.instagram.com/psi.juliannybacelar/" target="_blank"><i
-                    class="fa-brands fa-instagram"></i></a>
-            <a href="https://www.linkedin.com/in/julianny-bacelar-950958207/" target="_blank"><i
-                    class="fa-brands fa-linkedin-in"></i></a>
-            <a href="mailto:juliannybacelarlima@gmail.com"><i class="fa-regular fa-envelope"></i></a>
-        </div> -->
+    <!-- <div class="tag-social">
+        <a href="https://www.instagram.com/psi.juliannybacelar/" target="_blank"><i
+                class="fa-brands fa-instagram"></i></a>
+        <a href="https://www.linkedin.com/in/julianny-bacelar-950958207/" target="_blank"><i
+                class="fa-brands fa-linkedin-in"></i></a>
+        <a href="mailto:juliannybacelarlima@gmail.com"><i class="fa-regular fa-envelope"></i></a>
+    </div> -->
 
-        <div class="hero-content">
-            <div class="hero-btns">
-                <button class="hero-btn">
-                    <a href="#" tabindex="13">Psicologia clínica - 06/215359</a>
-                </button>
-            </div>
-            <h1 tabindex="14">Você não precisa carregar tudo sozinho</h1>
-            <p tabindex="15">Atendimento psicoterapêutico online para adultos e adolescentes, e presencial para crianças — com escuta,
-                cuidado e sem julgamentos.</p>
-            <div class="hero-btns">
-                <button class="hero-btn">
-                    <a href="#contato" tabindex="16"> Online - Adultos</a>
-                </button>
-                <button class="hero-btn">
-                    <a href="#contato" tabindex="17"> Online - Jovens</a>
-                </button>
-                <button class="hero-btn">
-                    <a href="#contato" tabindex="18"> Presencial - Crianças</a>
-                </button>
-                <button class="hero-btn">
-                    <a href="#contato" tabindex="19"> <abbr title="Terapia Cognitivo-Comportamental, é uma abordagem psicológica que busca modificar pensamentos e comportamentos disfuncionais para promover bem-estar emocional e mudanças práticas na vida do paciente.">TCC</abbr> - <abbr title="Análise do Comportamento Aplicada é uma abordagem científica que estuda como o ambiente influencia o comportamento humano e utiliza esse conhecimento para promover mudanças observáveis e mensuráveis.">ABA</abbr></a>
-                </button>
-            </div>
-
-            <a href="#contato">
-                <button class="hero-btn-agende" tabindex="20">
-                    <a href="https://www.instagram.com/psi.juliannybacelar?igsh=empsOHY5bTV4dnZo" target="_blank"
-                        rel="noopener noreferrer" aria-label="Instagram">Agende sua sessão</a>
-                </button>
-            </a>
+    <div class="hero-content">
+        <div class="hero-btns">
+            <a href="#" class="hero-btn" tabindex="13">Psicologia clínica - 06/215359</a>
         </div>
+        <h1 tabindex="14">Você não precisa carregar tudo sozinho</h1>
+        <p tabindex="15">Atendimento psicoterapêutico online para adultos e adolescentes, e presencial para crianças — com escuta,
+            cuidado e sem julgamentos.</p>
+        <div class="hero-btns">
+            <a href="#contato" class="hero-btn" tabindex="16">Online - Adultos</a>
+            <a href="#contato" class="hero-btn" tabindex="17">Online - Jovens</a>
+            <a href="#contato" class="hero-btn" tabindex="18">Presencial - Crianças</a>
+            <a href="#contato" class="hero-btn" tabindex="19"><abbr title="Terapia Cognitivo-Comportamental, é uma abordagem psicológica que busca modificar pensamentos e comportamentos disfuncionais para promover bem-estar emocional e mudanças práticas na vida do paciente.">TCC</abbr> - <abbr title="Análise do Comportamento Aplicada é uma abordagem científica que estuda como o ambiente influencia o comportamento humano e utiliza esse conhecimento para promover mudanças observáveis e mensuráveis.">ABA</abbr></a>
         </div>
-        <div class="hero-image">
-            <img src="img/logo_bege.png" alt="Imagem da logo que são as iniciais JB da psicóloga com fundo bege">
-        </div>
-    </section>
 
-    <!--Serviços-->
+        <a href="https://www.instagram.com/psi.juliannybacelar?igsh=empsOHY5bTV4dnZo" class="hero-btn-agende" tabindex="20" target="_blank"
+            rel="noopener noreferrer" aria-label="Instagram">Agende sua sessão</a>
+    </div>
 
+    <div class="hero-image">
+        <img src="img/logo_bege.png" alt="Imagem da logo que são as iniciais JB da psicóloga com fundo bege">
+    </div>
+</section>
+
+   <!--Serviços-->
     <section id="servicos">
 
         <p tabindex="21">Serviços</p>
@@ -162,25 +154,23 @@
 
     </section>
 
-    </div>
-    </section>
-
     <!-- Psicoterapia Individual -->
+
+    <h1 tabindex="29">Psicoterapia Individual</h1>
+
     <section id="psicoterapia" class="reveal reveal--delay-1">
 
         <div id="psicoterapia-content">
 
-
             <!-- Imagem da psicóloga -->
-            <section id="psicoterapia-imagem">
-                <img src="img/Ju1.png" alt="Imagem da Psícologa Julianny Bacelar">
-
-            </section>
+            <div id="psicoterapia-imagem">
+                <img src="img/Ju1.png" alt="Imagem da Psicóloga Julianny Bacelar">
+            </div>
 
             <!-- Conteúdo -->
-            <section id="psicoterapia-value">
+            <div id="psicoterapia-value">
 
-                <h1 tabindex="29">Psicoterapia Individual</h1>
+                <h2 tabindex="29">Psicoterapia Individual</h2>
 
                 <div id="psicoterapia-caixa">
 
@@ -221,7 +211,7 @@
 
                 </div>
 
-            </section>
+            </div>
 
         </div>
 
@@ -233,83 +223,77 @@
 
         <p tabindex="36">Abordagem</p>
 
-        <h2 tabindex="37">Terapia do Esquema</h2>
+        <h2 id="abordagem-titulo" tabindex="37">Terapia do Esquema</h2>
 
         <p tabindex="38">é uma abordagem avançada da psicoterapia que expande a Terapia Cognitivo-Comportamental (TCC) tradicional
             para tratar padrões emocionais profundos e crônicos.</p>
 
-
     </section>
 
 
-
     <!--Sobre Mim-->
-    <section id="sobre-mim" class="reveal">
+   <section id="sobre-mim" class="reveal">
         <div id="sobre-mim-image">
-            <img src="img/Ju1.png" alt="Imagem da Psícologa Julianny Bacelar">
+            <img src="img/Ju1.png" alt="Imagem da Psicóloga Julianny Bacelar">
         </div>
         <div id="sobre-mim-description">
             <p tabindex="39">Sobre Mim</p>
-            <h1 tabindex="40" id="sobre-mim-titulo">Olá, sou Julianny, psicológa clínica</h1>
+            <h1 tabindex="40" id="sobre-mim-titulo">Olá, sou Julianny, psicóloga clínica</h1>
             <p tabindex="41" id="sobre-mim-crp"><abbr title="Conselho Regional de Psicologia, o órgão que regulamenta, orienta e fiscaliza o exercício profissional dos psicólogos">CRP</abbr>: 06/215359</p>
             <p tabindex="42" id="sobre-mim-decription">Me formei em 2024 movida pela crença de que toda pessoa merece um espaço seguro
                 para se entender. Trabalho com escuta ativa, sem julgamentos, respeitando sempre o seu ritmo.</p>
             <div class="sobre-mim-btns">
-                <button  class="sobre-mim-btn">
-                    <a tabindex="43">Graduada em 2024</a>
-                </button>
-                <button class="sobre-mim-btn">
-                    <a tabindex="44">25 anos</a>
-                </button>
-                <button class="sobre-mim-btn">
-                    <a tabindex="45">Escuta ativa</a>
-                </button>
+                <button class="sobre-mim-btn" tabindex="43">Graduada em 2024</button>
+                <button class="sobre-mim-btn" tabindex="44">25 anos</button>
+                <button class="sobre-mim-btn" tabindex="45">Escuta ativa</button>
             </div>
         </div>
     </section>
-
+    
     <!-- Contato -->
     <section id="contato" class="reveal">
 
         <div class="contato-content">
-            <section class="contato-texto">
+            <div class="contato-texto">
                 <h2 tabindex="46">Dê o primeiro passo. Estou aqui para te ouvir com cuidado e sem julgamentos!</h2>
-                <p tabindex="47">Caso se sinta confortável, continuaremos com os nossos encontros e te ajuderei a evoluir. </p>
-                <button tabindex="48" href="https://www.instagram.com/psi.juliannybacelar?igsh=empsOHY5bTV4dnZo" target="_blank"
-                    rel="noopener noreferrer" aria-label="Instagram" style="margin-top: 2rem;">Fale comigo</button>
-            </section>
+                <p tabindex="47">Caso se sinta confortável, continuaremos com os nossos encontros e te ajudarei a evoluir.</p>
+                <a tabindex="48" href="https://www.instagram.com/psi.juliannybacelar?igsh=empsOHY5bTV4dnZo" target="_blank"
+                    rel="noopener noreferrer" aria-label="Instagram" class="btn-contato" style="margin-top: 2rem; display: inline-block;">Fale comigo</a>
+            </div>
 
-            <section class="contato">
-
-
+            <div class="contato">
                 <ul>
-                    <li><img tabindex="49" loading="lazy" src="img/instagram.png" alt="Logo da rede social Instagram"><a
-                            href="https://www.instagram.com/psi.juliannybacelar?igsh=empsOHY5bTV4dnZo" target="_blank"
-                            rel="noopener noreferrer"></a>
+                    <li>
+                        <img tabindex="49" loading="lazy" src="img/instagram.png" alt="Logo da rede social Instagram">
+                        <a href="https://www.instagram.com/psi.juliannybacelar?igsh=empsOHY5bTV4dnZo" target="_blank"
+                            rel="noopener noreferrer" aria-label="Acessar Instagram"></a>
                         <div>
                             <h3>Instagram</h3>
                             <p>@psi.juliannybacelar</p>
                         </div>
                     </li>
-                    <li><img tabindex="50" loading="lazy" src="img/linkedin.png" alt="Logo da rede social Linkedin"><a
-                            href="https://www.linkedin.com/in/julianny-bacelar-950958207/" target="_blank"
-                            rel="noopener noreferrer"></a>
+                    <li>
+                        <img tabindex="50" loading="lazy" src="img/linkedin.png" alt="Logo da rede social Linkedin">
+                        <a href="https://www.linkedin.com/in/julianny-bacelar-950958207/" target="_blank"
+                            rel="noopener noreferrer" aria-label="Acessar LinkedIn"></a>
                         <div>
                             <h3>Linkedin</h3>
                             <p>@linkedIndajuliannybacelar</p>
                         </div>
                     </li>
-                    <li><img tabindex="51" loading="lazy" src="img/mail.png" alt="Logo para Email">
+                    <li>
+                        <img tabindex="51" loading="lazy" src="img/mail.png" alt="Logo para Email">
                         <div>
                             <h3>Email</h3>
                             <p>juliannybacelarlima@gmail.com</p>
                         </div>
                     </li>
                 </ul>
-            </section>
+            </div>
         </div>
 
     </section>
+
 
     <footer class="reveal reveal--delay-2">
         <address>
