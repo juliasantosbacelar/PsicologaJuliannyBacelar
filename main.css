@@ -9,6 +9,7 @@
   --nav-h: 64px;
   --section-inline: clamp(1.25rem, 4vw, 4rem);
   --layout-max: 1240px;
+  --page-gutter: max(var(--section-inline), calc((100vw - var(--layout-max)) / 2));
   --motion-duration-soft: 0.55s;
   --motion-duration-medium: 0.72s;
   --motion-duration-hero: 0.78s;
@@ -199,7 +200,7 @@ header::before {
 .nav-logo-wrap {
   display: flex;
   align-items: center;
-  gap: 80px;
+  gap: 1rem;
   text-decoration: none;
   color: #000000;
 }
@@ -217,6 +218,13 @@ header::before {
   background-position: center;
 }
 
+.logo-avatar img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
 /* o Julianny Bacelar do navbar */
 .navbar {
   display: flex;
@@ -224,7 +232,7 @@ header::before {
   justify-content: space-between;
   position: relative;
   z-index: 2;
-  padding: 0 max(4%, env(safe-area-inset-right, 0)) 0 max(4%, env(safe-area-inset-left, 0));
+  padding: 0 max(var(--page-gutter), env(safe-area-inset-right, 0px)) 0 max(var(--page-gutter), env(safe-area-inset-left, 0px));
   min-height: var(--nav-h);
   padding-top: 20px;
   padding-bottom: 20px;
@@ -237,12 +245,13 @@ header::before {
   color: #000000;
   text-decoration: none;
   margin-top: 0;
+  white-space: nowrap;
 }
 
 .nav-links {
   display: flex;
   align-items: center;
-  gap: 62px;
+  gap: clamp(1.25rem, 3vw, 2.5rem);
   list-style: none;
   margin: 0;
   padding: 0;
@@ -344,7 +353,8 @@ header::before {
   min-height: 100dvh;
   display: flex;
   align-items: center;
-  padding: max(1rem, env(safe-area-inset-top, 0px)) var(--section-inline) max(1rem, env(safe-area-inset-bottom, 0px));
+  padding: max(1rem, env(safe-area-inset-top, 0px)) 0 max(1rem, env(safe-area-inset-bottom, 0px));
+  padding-inline: var(--page-gutter);
   justify-content: space-between;
 }
 
@@ -362,7 +372,7 @@ header::before {
   margin-top: 19px;
   border-radius: 999px;
   border: none;
-  color:--marromEscuro;
+  color: var(--marromEscuro);
   text-decoration: none;
   text-transform: uppercase;
   font-size: 13px;
@@ -454,11 +464,27 @@ header::before {
     transform var(--motion-duration-soft) var(--motion-ease-out);
 }
 
+.hero-btns--credentials .hero-btn {
+  width: auto;
+}
+
+.hero-btns--audiences {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.hero-btns--audiences .hero-btn {
+  width: 100%;
+  min-width: 0;
+  padding-inline: 12px;
+}
+
 .hero-btns .hero-btn:hover{
     transform: translateY(-2px);
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18);
     color: var(--marromEscuro);
-    background-color: var(--marromClaro);
+    background-color: #aeb096;
 }
 
 .hero-btn a {
@@ -561,8 +587,8 @@ header::before {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 24px 32px;
-  width: 90%;
-  max-width: 1100px;
+  width: calc(100% - var(--page-gutter) - var(--page-gutter));
+  max-width: var(--layout-max);
   margin: 40px auto;
 }
 
@@ -578,8 +604,8 @@ header::before {
 }
 
 .servico-card:hover {
-  background-color: var(--marromClaro);
-  color: var(--marromEscuro);
+  background-color: var(--marromEscuro);
+  color: var(--bege);
   font-weight: 700;
   transition: 0.5s;
   box-shadow: rgba(154, 80, 16, 0.331) 0px 48px 100px 0px;
@@ -816,6 +842,19 @@ header::before {
 
 /*PSICOTERAPIA*/
 
+.psicologa-foto {
+  display: block;
+  width: 358px;
+  height: 537px;
+  max-width: 100%;
+  object-fit: cover;
+  border-radius: 250px;
+}
+
+#psicoterapia {
+  padding-inline: var(--page-gutter);
+}
+
 #psicoterapia-content h1 {
   color: var(--marromEscuro);
   margin-top: clamp(2rem, 6vw, 105px);
@@ -825,36 +864,40 @@ header::before {
 }
 
 #psicoterapia-content {
-  display: flex;
+  display: grid;
+  grid-template-columns: minmax(0, 358px) minmax(0, 1fr);
   align-items: center;
-  justify-content: space-between;
-  gap: 60px;
-}
-
-#psicoterapia-imagem img {
-  width: 550px;
-  height: 675px;
-  object-fit: cover;
-  border-radius: 250px;
+  gap: clamp(3rem, 7vw, 6rem);
+  width: 100%;
+  max-width: var(--layout-max);
+  margin-inline: auto;
 }
 
 #psicoterapia-value {
   align-items: center;
+
 }
 
-#psicoterapia-value h1 {
+#psicoterapia-value h2 {
   text-align: center;
   margin-bottom: 60px;
+  justify-content: center;
+  padding: 0 24px;
 }
 
 #psicoterapia-caixa {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
 .psicoterapia-card {
   padding: 0 24px;
-  width: 400px;
+  width: 100%;
+  min-width: 0;
+}
+
+.psicoterapia-card:first-child {
+  padding-left: 0;
 }
 
 .psicoterapia-card .psicoterapia-subtitulo button {
@@ -953,7 +996,7 @@ header::before {
   flex-direction: column;
   align-items: center;
   margin-top: 50px;
-  padding: 20px 70px 70px 70px;
+  padding: 20px var(--page-gutter) 70px;
   background-color: var(--marromEscuro);
   color: var(--bege);
 }
@@ -970,7 +1013,10 @@ header::before {
 }
 
 #abordagem p:nth-of-type(2) {
+  width: min(100%, 64rem);
+  max-width: 64rem;
   font-size: 20px;
+  text-align: justify;
 }
 
 .abordagem-hint {
@@ -991,9 +1037,9 @@ header::before {
   align-items: stretch;
   justify-content: center;
   gap: 16px;
-  margin-left: var(--section-inline);
-  margin-right: var(--section-inline);
+  margin-inline: var(--page-gutter);
   margin-bottom: 48px;
+  max-width: var(--layout-max);
 }
 
 .abordagem-flip {
@@ -1075,68 +1121,99 @@ header::before {
 }
 
 /* SOBRE MIM */
-* #sobre-mim {
-  display: flex;
-  flex-wrap: wrap;
+#sobre-mim {
+  display: block;
+  padding: clamp(4rem, 8vw, 6rem) var(--page-gutter);
+  background-color: var(--bege);
+}
+
+.sobre-mim-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 358px) minmax(0, 1fr);
   align-items: center;
-  justify-content: center;
-  gap: clamp(1.5rem, 3vw, 3rem);
-  padding: clamp(2rem, 5vw, 4rem) var(--section-inline);
-  position: relative;
-  overflow: hidden;
+  gap: clamp(3rem, 7vw, 6rem);
+  width: 100%;
+  max-width: var(--layout-max);
+  margin-inline: auto;
 }
 
 #sobre-mim-description {
-  flex: 1 1 min(100%, 380px);
-  max-width: 40rem;
   min-width: 0;
   position: relative;
   z-index: 1;
 }
 
-#sobre-mim-description>p:first-of-type {
+#sobre-mim-description .sobre-mim-eyebrow {
   color: var(--marromEscuro);
   font-weight: 600;
-  margin: 0 0 0.5rem;
+  font-size: 0.75rem;
+  margin: 0 0 0.25rem;
+}
+
+.sobre-mim-credentials {
+  color: var(--marromEscuro);
+  font-size: 0.75rem;
+  margin: 0 0 0.35rem;
 }
 
 #sobre-mim-titulo {
   color: var(--marromEscuro);
-  font-size: clamp(1.5rem, 4vw, 2.25rem);
+  font-size: clamp(1.6rem, 3vw, 2.2rem);
   text-align: left;
-  margin-bottom: 16px;
+  line-height: 1.2;
+  margin: 0 0 1rem;
 }
 
 #sobre-mim-image {
-  display: flex;
-  flex: 1 1 min(100%, 340px);
-  justify-content: center;
-  align-items: center;
-  min-width: 0;
-  max-width: min(420px, 100%);
-  margin: 0 auto;
-}
-
-#sobre-mim-image img {
-  width: 100%;
-  max-width: 380px;
-  height: auto;
-  border-radius: 12px;
-  object-fit: cover;
-}
-
-#sobre-mim-decription {
-  color: var(--marromEscuro);
-  font-size: clamp(1rem, 2.2vw, 1.25rem);
-  line-height: 1.6;
+  width: 358px;
+  max-width: 100%;
+  height: 537px;
+  aspect-ratio: 358 / 537;
   margin: 0;
-  max-width: 40rem;
+  overflow: hidden;
+  border-radius: 250px;
+  background-color: #171411;
 }
 
-#sobre-mim-crp {
+.sobre-mim-text {
   color: var(--marromEscuro);
-  font-size: clamp(1rem, 2.2vw, 1.25rem);
-  margin-bottom: 16px;
+  font-size: clamp(0.9rem, 1vw, 1rem);
+  line-height: 1.55;
+}
+
+.sobre-mim-text p {
+  margin: 0 0 0.8rem;
+}
+
+.sobre-mim-cta {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: 2.75rem;
+  margin-top: 1.2rem;
+  padding: 0.7rem 1.25rem;
+  border-radius: 999px;
+  background-color: var(--marromEscuro);
+  color: var(--bege);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: background-color var(--motion-duration-soft) var(--motion-ease-out),
+    transform var(--motion-duration-soft) var(--motion-ease-out);
+}
+
+.sobre-mim-cta:hover {
+  background-color: var(--marromClaro);
+  transform: translateY(-2px);
+}
+
+.sobre-mim-cta:focus-visible {
+  outline: 2px solid var(--marromEscuro);
+  outline-offset: 3px;
 }
 
 #sobre-mim-ramo {
@@ -1169,7 +1246,9 @@ header::before {
   color: var(--bege);
   text-decoration: none;
   font-size: 13px;
+  line-height: 1.3;
   margin-top: 15px;
+  text-align: center;
   transition: background-color var(--motion-duration-soft) var(--motion-ease-out),
     border-color var(--motion-duration-soft) var(--motion-ease-out),
     color var(--motion-duration-soft) var(--motion-ease-out),
@@ -1177,14 +1256,8 @@ header::before {
     transform var(--motion-duration-soft) var(--motion-ease-out);
 }
 
-.sobre-mim-btns {
-  display: flex;
-  gap: 12px;
-}
-
 /*CONTATO*/
 
-/* Remover sublinhado e cor azul padrão dos links na seção de contato e no footer */
 .contato a,
 footer a {
   color: inherit;
@@ -1203,163 +1276,275 @@ footer a:hover {
 }
 
 #contato {
-  width: 100%;
-  max-width: 100%;
-  min-height: 20rem;
-  padding: 2.5rem var(--section-inline);
-  padding-bottom: max(2.5rem, env(safe-area-inset-bottom, 0px));
+  padding: 1.25rem var(--page-gutter) max(clamp(2.5rem, 5vw, 4rem), env(safe-area-inset-bottom, 0px));
   background-color: var(--marromEscuro);
   color: var(--bege);
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  align-items: stretch;
-  gap: 2rem;
+}
+
+.contato-eyebrow {
+  margin: 0 0 1.5rem;
+  font-size: 0.75rem;
+  text-align: center;
 }
 
 .contato-content {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  gap: 1rem;
-  border: var(--borda);
-  border-radius: 2rem;
-  padding: 2rem;
+  display: grid;
+  grid-template-columns: minmax(0, 1.35fr) minmax(250px, 0.9fr);
+  align-items: stretch;
+  gap: clamp(2rem, 4vw, 4rem);
   width: 100%;
-  max-width: 100%;
+  max-width: var(--layout-max);
+  margin-inline: auto;
+  padding: clamp(2rem, 4vw, 3rem);
+  border: 1px solid var(--bege);
+  border-radius: 2rem;
 }
 
-*
-
-/* TEXTO + BOTÃO */
-* .contato-texto {
+.contato-texto {
   display: flex;
   flex-direction: column;
+  align-items: flex-start;
   justify-content: center;
-  margin-left: clamp(0rem, 4vw, 5rem);
   min-width: 0;
+  padding-right: clamp(0rem, 2vw, 2rem);
 }
 
 #contato h2 {
-  font-weight: normal;
-  font-size: clamp(1.5rem, 4vw, 2.5rem);
-  line-height: 1.25;
-  margin: 0;
+  margin: 0 0 0.75rem;
+  font-size: clamp(1.5rem, 2.3vw, 2rem);
+  font-weight: 600;
+  line-height: 1.2;
 }
 
-*
-/* BOTÃO */
-* .contato-btn,
-#contato button {
-  background-color: transparent;
-  border: var(--borda);
-  color: var(--bege);
-  border-radius: 4rem;
-  width: 15rem;
-  min-height: 48px;
-  height: auto;
-  padding: 0.75rem 1.25rem;
+.contato-texto p {
+  margin: 0;
+  font-size: 0.875rem;
+  line-height: 1.5;
+}
+
+.btn-contato {
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  min-width: 7.5rem;
+  min-height: 2.5rem;
+  margin-top: 2rem;
+  padding: 0.5rem 1.25rem;
+  border: 1px solid var(--bege);
+  border-radius: 999px;
+  color: var(--bege);
+  font-size: 0.875rem;
   text-decoration: none;
   transition: background-color var(--motion-duration-soft) var(--motion-ease-out),
-
-
-
     color var(--motion-duration-soft) var(--motion-ease-out),
-
-
-
-    border-color var(--motion-duration-soft) var(--motion-ease-out),
-
-
-
-    box-shadow var(--motion-duration-soft) var(--motion-ease-out),
-
-
-
     transform var(--motion-duration-soft) var(--motion-ease-out);
-  font-size: clamp(1rem, 2.5vw, 1.2rem);
 }
 
-.contato-btn:hover,
-#contato button:hover {
+.btn-contato:hover {
   background-color: var(--bege);
   color: var(--marromEscuro);
-  cursor: pointer;
   transform: translateY(-2px);
-  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.15);
 }
 
-*
+.btn-contato:focus-visible,
+.contato-item:focus-visible {
+  outline: 2px solid var(--bege);
+  outline-offset: 3px;
+}
 
-/* BLOCO DA DIREITA */
-* #contato>.contato {
+.contato {
   display: flex;
   align-items: center;
-  flex: 1 1 320px;
   min-width: 0;
-  justify-content: center;
-  gap: clamp(2rem, 6vw, 10rem);
 }
 
-*
-
-/* IMAGEM */
-* .contato img {
-  max-width: min(45rem, 100%);
-  height: auto;
-}
-
-*
-
-/* LISTA */
-* .contato ul {
+.contato ul {
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  gap: 44px;
+  width: 100%;
   margin: 0;
+  padding: 0 0 0 clamp(1.5rem, 3vw, 2.5rem);
+  padding-block: 1.25rem;
   border-left: 1px solid var(--bege);
+  list-style: none;
 }
 
 .contato li {
+  min-width: 0;
+}
+
+.contato-item {
   display: flex;
-  flex-direction: row;
   align-items: center;
-  justify-content: flex-start;
-  gap: 1rem;
+  gap: 0.625rem;
+  min-width: 0;
+  color: inherit;
+  text-decoration: none;
 }
 
-*
-
-/* ÍCONES */
-* .contato li img {
-  width: 1.5rem;
-  height: 1.5rem;
-  transition: 0.3s;
+.contato-item img {
+  flex: 0 0 1rem;
+  width: 1rem;
+  height: 1rem;
+  object-fit: contain;
 }
 
-.contato li img:hover {
-  transform: translateY(-5px);
-  cursor: pointer;
+.contato-item div {
+  min-width: 0;
 }
 
-.contato li div {
-  display: flex;
-  flex-direction: column;
-  gap: 0.25rem;
-}
-
-.contato li h3 {
-  margin: 0;
-  font-size: 1rem;
+.contato-item h3 {
+  margin: 0 0 0.125rem;
+  font-size: 0.75rem;
   font-weight: 600;
 }
 
-.contato li p {
+.contato-item p {
   margin: 0;
-  font-size: 0.875rem;
+  font-size: 0.625rem;
+  overflow-wrap: anywhere;
+}
+
+.contato-item:hover {
+  filter: brightness(1.15);
+}
+
+.contato-item:visited {
+  color: inherit;
+}
+
+.formulario-contato {
+  padding: clamp(3rem, 5vw, 4rem) var(--page-gutter);
+  background-color: var(--bege);
+  color: var(--marromEscuro);
+}
+
+.formulario-contato-inner {
+  width: min(100%, 828px);
+  margin-inline: auto;
+}
+
+.formulario-contato h2 {
+  margin: 0 0 1rem;
+  font-size: clamp(1.4rem, 2.4vw, 1.5rem);
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.contato-form {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.6rem clamp(1.25rem, 4vw, 2.5rem);
+}
+
+.formulario-campo {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  min-width: 0;
+}
+
+.formulario-campo--full {
+  grid-column: 1 / -1;
+}
+
+.formulario-campo > label:not(.formulario-sr-only) {
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.formulario-campo input,
+.formulario-campo select,
+.formulario-campo textarea {
+  width: 100%;
+  min-width: 0;
+  border: 1px solid #806957;
+  border-radius: 0.55rem;
+  background-color: transparent;
+  color: inherit;
+  font: inherit;
+  font-size: 0.7rem;
+}
+
+.formulario-campo input,
+.formulario-campo select {
+  height: 1.75rem;
+  padding: 0 0.5rem;
+}
+
+.formulario-campo textarea {
+  min-height: 7.375rem;
+  padding: 0.65rem 0.5rem;
+  resize: vertical;
+}
+
+.formulario-campo input::placeholder,
+.formulario-campo textarea::placeholder {
+  color: #806f5e;
+  opacity: 0.8;
+}
+
+.formulario-campo select {
+  color-scheme: light;
+  accent-color: var(--marromEscuro);
+}
+
+.formulario-campo select option {
+  background-color: var(--bege);
+  color: var(--marromEscuro);
+}
+
+.formulario-campo select option:checked {
+  background-color: var(--marromEscuro);
+  color: var(--bege);
+}
+
+.formulario-campo input:focus-visible,
+.formulario-campo select:focus-visible,
+.formulario-campo textarea:focus-visible,
+.formulario-acoes button:focus-visible {
+  outline: 2px solid var(--marromClaro);
+  outline-offset: 2px;
+}
+
+.formulario-acoes {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.formulario-acoes button {
+  min-width: 7.8rem;
+  min-height: 1.75rem;
+  padding: 0.35rem 1rem;
+  border: 0;
+  border-radius: 0.55rem;
+  background-color: var(--marromEscuro);
+  color: var(--bege);
+  font: inherit;
+  font-size: 0.7rem;
+  cursor: pointer;
+  transition: background-color var(--motion-duration-soft) var(--motion-ease-out),
+    transform var(--motion-duration-soft) var(--motion-ease-out);
+}
+
+.formulario-acoes button:hover {
+  background-color: #583222;
+  transform: translateY(-1px);
+}
+
+.formulario-sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
 }
 
 /*FOOTER*/
@@ -1591,9 +1776,75 @@ img {
 }
 
 @media (max-width: 768px) {
+  .nav-logo-wrap {
+    gap: 1rem;
+  }
+
+  .nav-hamburguer {
+    display: flex;
+    position: relative;
+    z-index: 2;
+    color: var(--marromEscuro);
+  }
+
+  .nav-hamburguer span {
+    background-color: currentColor;
+  }
+
+  .nav-links {
+    position: fixed;
+    inset: 0;
+    z-index: 1;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1.5rem;
+    min-height: 100vh;
+    min-height: 100dvh;
+    padding: 5rem 1.5rem 2rem;
+    background-color: var(--bege);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateX(100%);
+    transition: opacity var(--motion-duration-soft) var(--motion-ease-out),
+      transform var(--motion-duration-soft) var(--motion-ease-out),
+      visibility 0s linear var(--motion-duration-soft);
+  }
+
+  .nav-links.aberto {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(0);
+    transition: opacity var(--motion-duration-soft) var(--motion-ease-out),
+      transform var(--motion-duration-soft) var(--motion-ease-out),
+      visibility 0s;
+  }
+
+  .nav-links a {
+    font-size: 1.125rem;
+  }
+
+  .nav-modal-close-item {
+    display: flex;
+    position: absolute;
+    top: max(1.25rem, env(safe-area-inset-top, 0));
+    right: max(1.25rem, env(safe-area-inset-right, 0));
+  }
+
+  .nav-modal-close {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    border: 0;
+    background: transparent;
+    color: var(--marromEscuro);
+    font-size: 1.5rem;
+    cursor: pointer;
+  }
+
   #abordagem-type {
-    margin-left: var(--section-inline);
-    margin-right: var(--section-inline);
+    margin-inline: var(--page-gutter);
     gap: 12px;
   }
 
@@ -1633,7 +1884,7 @@ img {
   }
 
   #servicos-content {
-    margin-inline: var(--section-inline);
+    margin-inline: var(--page-gutter);
     padding: 1.5rem 1rem;
     max-width: 100%;
     gap: 0;
@@ -1724,18 +1975,38 @@ img {
 @media (max-width: 768px) {}
 
 @media (max-width: 900px) {
+  .sobre-mim-layout {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 2.5rem;
+    max-width: 36rem;
+    margin-inline: auto;
+  }
+
+  #sobre-mim-image {
+    width: min(320px, 88vw);
+    height: auto;
+    margin-inline: auto;
+  }
+
+  #sobre-mim-image .psicologa-foto {
+    width: 100%;
+    height: auto;
+  }
+
   #psicoterapia {
-    padding-inline: var(--section-inline);
+    padding-inline: var(--page-gutter);
   }
 
   #psicoterapia-content {
-    flex-direction: column;
+    grid-template-columns: minmax(0, 1fr);
     align-items: center;
+    gap: 2.5rem;
+    max-width: 36rem;
+    margin-inline: auto;
     padding-bottom: clamp(2rem, 5vw, 3rem);
   }
 
   #psicoterapia-imagem {
-    order: -1;
     margin-top: 0;
     margin-bottom: 1rem;
     width: 100%;
@@ -1748,6 +2019,21 @@ img {
     height: auto;
     display: block;
     margin-inline: auto;
+  }
+
+  #psicoterapia-caixa {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 1.5rem;
+  }
+
+  .psicoterapia-card {
+    padding: 0;
+  }
+
+  .psicoterapia-card+.psicoterapia-card {
+    padding-top: 1.5rem;
+    border-left: 0;
+    border-top: 1px solid #DADCBD;
   }
 
   #psicoterapia-content h1 {
@@ -1772,36 +2058,63 @@ img {
   }
 }
 
-@media (max-width: 1100px) {
+@media (max-width: 992px) {
+  .contato-content {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 1.75rem;
+  }
+
   .contato-texto {
-    margin-left: 0;
+    padding-right: 0;
+  }
+
+  .contato ul {
+    padding: 1.5rem 0 0;
+    border-top: 1px solid var(--bege);
+    border-left: 0;
+  }
+
+  .contato {
+    align-items: stretch;
   }
 }
 
-@media (max-width: 992px) {
-  #contato {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
-
-  .contato-texto {
-    align-items: center;
-    margin-left: 0;
-  }
-
+@media (max-width: 600px) {
   .contato-content {
-    flex-direction: column;
-    align-items: stretch;
+    padding: 1.5rem;
+    border-radius: 1.5rem;
   }
 
-  #contato .contato {
-    flex-direction: column;
-    width: 100%;
+  #contato h2 {
+    font-size: clamp(1.35rem, 6vw, 1.75rem);
   }
 
-  .contato img {
-    max-width: min(25rem, 100%);
+  .formulario-contato {
+    padding-block: 2.5rem;
+  }
+
+  .contato-form {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0.75rem;
+  }
+
+  .formulario-campo--full {
+    grid-column: auto;
+  }
+
+  .formulario-campo input,
+  .formulario-campo select {
+    height: 2.5rem;
+    font-size: 0.8rem;
+  }
+
+  .formulario-campo textarea {
+    min-height: 8rem;
+    font-size: 0.8rem;
+  }
+
+  .formulario-acoes button {
+    min-height: 2.5rem;
   }
 }
 
@@ -1815,10 +2128,6 @@ img {
     --section-inline: clamp(1.5rem, 4vw, 5rem);
   }
 
-  #hero {
-    padding-inline: max(var(--section-inline), calc((100% - var(--layout-max)) / 2));
-  }
-
   .hero-content h1 {
     font-size: clamp(2.75rem, 3.2vw, 3.75rem);
   }
@@ -1827,30 +2136,8 @@ img {
     max-width: min(480px, 36vw, 100%);
   }
 
-  #sobre-mim {
-    max-width: var(--layout-max);
-    margin-inline: auto;
-    padding-inline: var(--section-inline);
-  }
-
-  #servicos-content {
-    max-width: var(--layout-max);
-  }
-
-  #abordagem-type {
-    max-width: var(--layout-max);
-    margin-left: auto;
-    margin-right: auto;
-  }
-
   #psicoterapia-content {
-    max-width: var(--layout-max);
-    margin-inline: auto;
-    padding-inline: var(--section-inline);
-  }
-
-  #contato {
-    padding-inline: max(var(--section-inline), calc((100% - var(--layout-max)) / 2));
+    padding-inline: 0;
   }
 
   footer {
@@ -1859,6 +2146,141 @@ img {
     width: 100%;
     box-sizing: border-box;
   }
+}
+
+@media (max-width: 1000px) {
+  #hero {
+    flex-direction: column;
+    justify-content: center;
+    gap: clamp(1.5rem, 5vh, 3rem);
+    min-height: 100vh;
+    min-height: 100dvh;
+    padding: max(2rem, env(safe-area-inset-top, 0px)) var(--page-gutter)
+      max(2rem, env(safe-area-inset-bottom, 0px));
+  }
+
+  .hero-content {
+    display: flex;
+    flex: 0 1 auto;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    max-width: 42rem;
+    min-width: 0;
+    margin-inline: auto;
+  }
+
+  .hero-content h1 {
+    width: 100%;
+    max-width: none;
+    margin-bottom: 1.25rem;
+    font-size: clamp(2rem, 6vw, 3rem);
+    line-height: 1.15;
+  }
+
+  .hero-content p {
+    width: 100%;
+    max-width: none;
+    margin-bottom: 1.25rem;
+    font-size: clamp(1rem, 2.4vw, 1.125rem);
+    line-height: 1.5;
+  }
+
+  .hero-content > .hero-btns {
+    width: 100%;
+  }
+
+  .hero-btns--audiences .hero-btn {
+    padding: 0.75rem 0.5rem;
+    font-size: clamp(0.65rem, 1.5vw, 0.75rem);
+  }
+
+  .hero-btn-agende {
+    margin-top: 1.25rem;
+    padding: 0.875rem 1.25rem;
+  }
+
+  .hero-image {
+    flex: 0 0 auto;
+    justify-content: center;
+    width: 100%;
+  }
+
+  .hero-image img {
+    width: min(48vw, 260px);
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+@media (max-width: 768px) {
+  #servicos-content {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.75rem;
+  }
+
+  .servico-card {
+    min-width: 0;
+    min-height: 7rem;
+    padding: 1.5rem 0.75rem;
+  }
+
+  .servico-card p {
+    overflow-wrap: anywhere;
+    font-size: clamp(0.875rem, 2.2vw, 1rem);
+  }
+
+  #abordagem {
+    padding-block: 2.5rem;
+  }
+
+  #abordagem-titulo {
+    max-width: 100%;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    padding-inline: 0;
+    text-align: center;
+  }
+
+  #abordagem > p {
+    width: 100%;
+    max-width: 42rem;
+    padding-inline: 0;
+    line-height: 1.6;
+  }
+
+  #abordagem > p:nth-of-type(2) {
+    max-width: 42rem;
+    font-size: clamp(1rem, 2.5vw, 1.125rem);
+    text-align: justify;
+  }
+}
+
+@media (max-width: 480px) {
+  #servicos-content {
+    gap: 0.75rem;
+  }
+
+  .servico-card {
+    min-height: 6.5rem;
+    padding: 1.25rem 0.625rem;
+  }
+
+  .servico-card p {
+    font-size: 0.875rem;
+  }
+}
+
+@media (max-width: 380px) {
+  #servicos-content {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+#servicos,
+#abordagem,
+#formulario-contato {
+  scroll-margin-top: calc(var(--nav-h) + 2.5rem);
 }
 
 @media (min-width: 1600px) {

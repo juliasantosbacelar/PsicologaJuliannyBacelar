@@ -25,6 +25,41 @@ document.addEventListener('DOMContentLoaded', () => {
         link.addEventListener('click', () => setMenuOpen(false));
     });
 
+    const contatoForm = document.getElementById('contato-form');
+    const contatoFormStatus = document.getElementById('contato-form-status');
+    contatoForm?.addEventListener('submit', (event) => {
+        event.preventDefault();
+
+        const formData = new FormData(contatoForm);
+        const nome = String(formData.get('nome'));
+        const mensagem = [
+            `Nome: ${nome}`,
+            `Celular: ${String(formData.get('celular') || 'Não informado')}`,
+            `E-mail: ${String(formData.get('email'))}`,
+            `Modalidade: ${String(formData.get('modalidade'))}`,
+            `Público: ${String(formData.get('publico'))}`,
+            '',
+            'Mensagem:',
+            String(formData.get('mensagem')),
+        ].join('\n');
+
+        const whatsappUrl = `https://wa.me/5513981469770?text=${encodeURIComponent(mensagem)}`;
+        const whatsappWindow = window.open(whatsappUrl, '_blank');
+
+        if (!whatsappWindow) {
+            if (contatoFormStatus) {
+                contatoFormStatus.textContent = 'O navegador bloqueou a nova aba. Abrindo o WhatsApp nesta página.';
+            }
+            window.location.assign(whatsappUrl);
+            return;
+        }
+
+        whatsappWindow.opener = null;
+        if (contatoFormStatus) {
+            contatoFormStatus.textContent = 'O WhatsApp foi aberto com a mensagem pronta. Revise e confirme o envio por lá.';
+        }
+    });
+
     const navModalClose = document.getElementById('navModalClose');
     navModalClose?.addEventListener('click', () => setMenuOpen(false));
 
