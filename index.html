@@ -49,7 +49,6 @@
 </div>
 
     <!--NAV BAR-->
-    <!--NAV BAR-->
     <header>
         <nav class="navbar">
             <div class="nav-logo-wrap">
@@ -80,17 +79,9 @@
             </ul>
         </nav>
     </header>
+
     <!--HERO-->
-
     <section id="hero">
-    <!-- <div class="tag-social">
-        <a href="https://www.instagram.com/psi.juliannybacelar/" target="_blank"><i
-                class="fa-brands fa-instagram"></i></a>
-        <a href="https://www.linkedin.com/in/julianny-bacelar-950958207/" target="_blank"><i
-                class="fa-brands fa-linkedin-in"></i></a>
-        <a href="mailto:juliannybacelarlima@gmail.com"><i class="fa-regular fa-envelope"></i></a>
-    </div> -->
-
     <div class="hero-content">
         <div class="hero-btns hero-btns--credentials">
             <a href="#" class="hero-btn" tabindex="13">Psicologia clínica - 06/215359</a>
@@ -115,69 +106,47 @@
 
    <!--Serviços-->
     <section id="servicos">
-
         <p tabindex="21">Serviços</p>
-
         <h1 tabindex="22" id="servicos-titulo">
             Como a psicoterapia<br>
             pode te ajudar?
         </h1>
-
         <div id="servicos-content">
-
             <div class="servico-card">
                 <p tabindex="23">Promove o<br> Autoconhecimento</p>
             </div>
-
             <div class="servico-card">
                 <p tabindex="24">Melhora as Relações<br> Interpessoais</p>
             </div>
-
             <div class="servico-card">
                 <p tabindex="25">Desenvolve a<br> Regulação Emocional</p>
             </div>
-
             <div class="servico-card">
                 <p tabindex="26">Resgata a<br> Autoestima</p>
             </div>
-
             <div class="servico-card">
                 <p tabindex="27">Fim da<br> Autossabotagem</p>
             </div>
-
             <div class="servico-card">
                 <p tabindex="28">Trata e Previne<br> Transtornos</p>
             </div>
-
         </div>
-
     </section>
 
     <!-- Psicoterapia Individual -->
     <section id="psicoterapia" class="reveal reveal--delay-1">
-
         <div id="psicoterapia-content">
-
-            <!-- Imagem da psicóloga -->
             <div id="psicoterapia-imagem">
                 <img class="psicologa-foto" src="img/Ju1.png" width="358" height="537" alt="Imagem da Psicóloga Julianny Bacelar">
             </div>
-
-            <!-- Conteúdo -->
             <div id="psicoterapia-value">
-
                 <h2 tabindex="29">Psicoterapia Individual</h2>
-
                 <div id="psicoterapia-caixa">
-
-                    <!-- Atendimento Adultos e Adolescentes -->
                     <div class="psicoterapia-card">
-
                         <div class="psicoterapia-subtitulo">
                             <p tabindex="30">Adultos | Adolescentes</p>
                             <button tabindex="31">Online</button>
                         </div>
-
                         <p tabindex="32">
                             Os atendimentos online acontecem por videochamada
                             em um ambiente seguro, privativo e confidencial.
@@ -185,46 +154,30 @@
                             rigorosamente as diretrizes do Conselho Federal
                             de Psicologia (CFP).
                         </p>
-
                     </div>
-
-                    <!-- Atendimento Infantil -->
                     <div class="psicoterapia-card">
-
                         <div class="psicoterapia-subtitulo">
                             <p tabindex="33">Infantil</p>
                             <button tabindex="34">Presencial</button>
                         </div>
-
                         <p tabindex="35">
                             Atendimento infantil no conforto do seu lar.
                             Através do brincar, a criança expressa suas
                             emoções onde se sente mais segura, enquanto
                             a sua família ganha praticidade no dia a dia.
                         </p>
-
                     </div>
-
                 </div>
-
             </div>
-
         </div>
-
     </section>
-
 
     <!--Abordagens-->
     <section id="abordagem" class="reveal" aria-labelledby="abordagem-titulo">
-
         <p tabindex="36">Abordagem</p>
-
         <h2 id="abordagem-titulo" tabindex="37">Terapia Cognitivo-Comportamental</h2>
-
         <p tabindex="38">É uma abordagem da psicologia baseada na premissa de que os nossos pensamentos, emoções e comportamentos estão profundamente interligados. Ela não foca apenas no que aconteceu no passado, mas em como você interpreta os eventos do presente e como isso gera sofrimento ou comportamentos limitantes.</p>
-
     </section>
-
 
     <!--Sobre Mim-->
    <section id="sobre-mim" class="reveal" aria-labelledby="sobre-mim-titulo">
@@ -248,7 +201,6 @@
     
     <!-- Contato -->
     <section id="contato" class="reveal" aria-labelledby="contato-titulo">
-
         <p class="contato-eyebrow">Contatos</p>
         <div class="contato-content">
             <div class="contato-texto">
@@ -292,7 +244,6 @@
                 </ul>
             </div>
         </div>
-
     </section>
 
     <section id="formulario-contato" class="formulario-contato reveal" aria-labelledby="formulario-contato-titulo">
@@ -314,21 +265,28 @@
                     <input tabindex="55" id="contato-email" name="email" type="email" placeholder="E-mail"
                         autocomplete="email" required>
                 </div>
+                
+                <!-- CORRIGIDO: Select de Modalidade -->
                 <div class="formulario-campo">
                     <label for="contato-modalidade">Modalidade que te agrada</label>
                     <select tabindex="56" id="contato-modalidade" name="modalidade" required>
-                        <option value="Online" selected>Online</option>
+                        <option value="" disabled selected>Selecione a modalidade</option>
+                        <option value="Online">Online</option>
                         <option value="Presencial">Presencial</option>
                     </select>
                 </div>
+
+                <!-- CORRIGIDO: Select de Público -->
                 <div class="formulario-campo">
                     <label for="contato-publico">Público</label>
                     <select tabindex="57" id="contato-publico" name="publico" required>
-                        <option value="Infantil" selected>Infantil</option>
+                        <option value="" disabled selected>Selecione o público</option>
+                        <option value="Infantil">Infantil</option>
                         <option value="Adolescentes">Adolescentes</option>
                         <option value="Adultos">Adultos</option>
                     </select>
                 </div>
+
                 <div class="formulario-campo formulario-campo--full">
                     <label class="formulario-sr-only" for="contato-mensagem">Mensagem</label>
                     <textarea tabindex="58" id="contato-mensagem" name="mensagem" placeholder="Mensagem"
@@ -370,20 +328,15 @@
         </address>
 
         <p tabindex="64" class="cvv">Este site não oferece atendimento de urgência. Em caso de crise, ligue para o  <abbr title="Centro de Valorização da Vida, um serviço gratuito de apoio emocional e prevenção do suicídio no Brasil, acessível pelo número 188"> CVV</abbr> (188)</p>
-
-
-
     </footer>
 
     <p tabindex="65" class="direito">@copyrigth Julianny Bacelar Psicóloga | CRP:06/215359</p>
-
 
     <script src="style.js" defer></script>
     <script>
         function openInstagramDM(username) {
             var appUrl = 'instagram://user?username=' + username;
             var webUrl = 'https://www.instagram.com/' + username + '/';
-            // Try to open the Instagram app; fallback to web profile after 600ms
             window.location = appUrl;
             setTimeout(function () { window.location = webUrl; }, 600);
         }

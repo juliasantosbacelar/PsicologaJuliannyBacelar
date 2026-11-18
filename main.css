@@ -17,7 +17,7 @@
   --motion-stagger-step: 0.1s;
 }
 
-/*Botões de alto contraste e aumento/diminui fonte*/
+/* Botões de alto contraste e aumento/diminui fonte */
 
 .acessibilidade {
     position: fixed;
@@ -52,11 +52,11 @@
     color: #fff !important;
 }
 
-
 .alto-contraste::selection {
     color: #ffff00 !important;
     background-color: #fff !important;
 }
+
 .alto-contraste button {
     border: solid 1px #ffff00;
 }
@@ -121,7 +121,8 @@ body {
 *:focus {
     padding: 5px;
     border: var(--marromEscuro) 2px solid;
-    box-shadow: rgba(141, 121, 60, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;}
+    box-shadow: rgba(141, 121, 60, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+}
 
 body {
   margin: 0;
@@ -161,13 +162,12 @@ body::selection {
   color: var(--marromEscuro);
 }
 
-
-/*serve pra n rolar a pág por baixo do menu aberto*/
+/* Serve pra n rolar a pág por baixo do menu aberto */
 body.no-scroll {
   overflow: hidden;
 }
 
-/*tenho que colocar as variaveis de cor e fonte pra cada elemento, porque o header tem um background com blur, então se eu colocar a cor do texto do header como var(--marromEscuro) ele fica meio transparente e difícil de ler, por isso coloquei a cor do texto do header como #000000 mesmo, pra garantir que fique legível*/
+/* Tenho que colocar as variaveis de cor e fonte pra cada elemento, porque o header tem um background com blur, então se eu colocar a cor do texto do header como var(--marromEscuro) ele fica meio transparente e difícil de ler, por isso coloquei a cor do texto do header como #000000 mesmo, pra garantir que fique legível */
 
 header {
   position: sticky;
@@ -182,7 +182,7 @@ header {
   background-color: transparent;
 }
 
-/* Blur só na camada de fundo: evita que \\\`backdrop-filter\\\` no header prenda \\\`position:fixed\\\` do menu à barra */
+/* Blur só na camada de fundo: evita que `backdrop-filter` no header prenda `position:fixed` do menu à barra */
 header::before {
   content: "";
   position: absolute;
@@ -194,9 +194,9 @@ header::before {
   pointer-events: none;
 }
 
-/*NAVBAR*/
+/* NAVBAR */
 
-/*logo + julianny bacelar*/
+/* logo + julianny bacelar */
 .nav-logo-wrap {
   display: flex;
   align-items: center;
@@ -225,7 +225,7 @@ header::before {
   object-fit: contain;
 }
 
-/* o Julianny Bacelar do navbar */
+/* O Julianny Bacelar do navbar */
 .navbar {
   display: flex;
   align-items: center;
@@ -289,7 +289,7 @@ header::before {
   justify-content: center;
   background-color: transparent;
   border: 1.5px solid var(--marromEscuro);
-  color:var(--marromEscuro);
+  color: var(--marromEscuro);
   padding: 0px 24px;
   min-height: 48px;
   border-radius: 999px;
@@ -307,7 +307,6 @@ header::before {
   box-shadow: rgba(70, 5, 5, 0.16) 0px 10px 36px 0px, rgba(65, 36, 6, 0.06) 0px 0px 0px 1px; 
   background-color: var(--marromClaro);
 }
-
 
 /* Hamburguer */
 .nav-hamburguer {
@@ -333,7 +332,7 @@ header::before {
   transition: all 0.3s;
 }
 
-/*animação do hamburguer para o X*/
+/* Animação do hamburguer para o X */
 .nav-hamburguer.ativo span:nth-child(1) {
   transform: translateY(7px) rotate(45deg);
 }
@@ -346,7 +345,7 @@ header::before {
   transform: translateY(-7px) rotate(-45deg);
 }
 
-/*HERO*/
+/* HERO */
 #hero {
   background-color: var(--marromEscuro);
   min-height: 100vh;
@@ -480,7 +479,7 @@ header::before {
   padding-inline: 12px;
 }
 
-.hero-btns .hero-btn:hover{
+.hero-btns .hero-btn:hover {
     transform: translateY(-2px);
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18);
     color: var(--marromEscuro);
@@ -498,7 +497,7 @@ header::before {
   text-decoration: none;
 }
 
-#hero .hero-btn-agende:hover{
+#hero .hero-btn-agende:hover {
     font-weight: 700;
     background-color: #aeb096;
 }
@@ -556,14 +555,12 @@ header::before {
 
 /* Serviços */
 
-#servicos>p:first-of-type {
+#servicos > p:first-of-type {
   color: var(--marromEscuro);
   text-align: center;
   margin-top: 40px;
 }
 
-
-/*background-color: var(--marromEscuro);  */
 #servicos-titulo {
   color: var(--marromEscuro);
   font-size: 36px;
@@ -640,7 +637,7 @@ header::before {
   background-color: rgba(64, 37, 22, 0.05);
 }
 
-.servico-summary-main>i {
+.servico-summary-main > i {
   font-size: 1.35rem;
   display: flex;
   align-items: center;
@@ -654,7 +651,7 @@ header::before {
   transition: transform var(--motion-duration-medium) var(--motion-ease-out);
 }
 
-.servicos-accordion .servico-item[open] .servico-summary-main>i {
+.servicos-accordion .servico-item[open] .servico-summary-main > i {
   transform: scale(1.05);
 }
 
@@ -684,13 +681,13 @@ header::before {
   text-align: left;
 }
 
-.servico-summary>div:first-child {
+.servico-summary > div:first-child {
   flex: 1;
   min-width: 0;
   text-align: left;
 }
 
-.servico-summary>div:first-child p {
+.servico-summary > div:first-child p {
   margin: 0.35rem 0 0;
   font-size: 0.9rem;
   font-weight: 500;
@@ -699,19 +696,13 @@ header::before {
   opacity: 0.85;
 }
 
-.servico-summary>div:last-child {
+.servico-summary > div:last-child {
   flex-shrink: 0;
 }
 
-.servico-summary>div:last-child .sobre-mim-btn,
-
-
-
-.servico-summary>div:last-child .online-btn,
-
-
-
-.servico-summary>div:last-child .presencial-aba-btn {
+.servico-summary > div:last-child .sobre-mim-btn,
+.servico-summary > div:last-child .online-btn,
+.servico-summary > div:last-child .presencial-aba-btn {
   margin-top: 0;
   pointer-events: none;
 }
@@ -745,21 +736,9 @@ header::before {
   transform: translateY(-8px);
   padding: 0 20px 0 84px;
   transition: max-height var(--motion-duration-medium) var(--motion-ease-out),
-
-
-
     opacity var(--motion-duration-soft) var(--motion-ease-out),
-
-
-
     transform var(--motion-duration-medium) var(--motion-ease-out),
-
-
-
     padding-bottom var(--motion-duration-medium) var(--motion-ease-out),
-
-
-
     border-top-color var(--motion-duration-soft) var(--motion-ease-out);
 }
 
@@ -790,9 +769,6 @@ header::before {
   opacity: 0;
   transform: translateY(6px);
   transition: opacity var(--motion-duration-soft) var(--motion-ease-out),
-
-
-
     transform var(--motion-duration-medium) var(--motion-ease-out);
 }
 
@@ -840,7 +816,7 @@ header::before {
   padding-top: 16px;
 }
 
-/*PSICOTERAPIA*/
+/* PSICOTERAPIA */
 
 .psicologa-foto {
   display: block;
@@ -875,7 +851,6 @@ header::before {
 
 #psicoterapia-value {
   align-items: center;
-
 }
 
 #psicoterapia-value h2 {
@@ -904,24 +879,21 @@ header::before {
   padding: 10px 30px 10px 30px;
 }
 
-*
-
 /* Botão Online */
-* .psicoterapia-card:nth-of-type(1) .psicoterapia-subtitulo button {
+.psicoterapia-card:nth-of-type(1) .psicoterapia-subtitulo button {
   color: var(--marromEscuro);
   border: 1px solid var(--marromEscuro);
   background-color: #40251628;
 }
-*
 
 /* Botão Presencial */
-* .psicoterapia-card:nth-of-type(2) .psicoterapia-subtitulo button {
-  color:var(--marromClaro);
-  border: solid 1pxvar(--marromClaro);
+.psicoterapia-card:nth-of-type(2) .psicoterapia-subtitulo button {
+  color: var(--marromClaro);
+  border: solid 1px var(--marromClaro);
   background-color: #a66c4b51;
 }
 
-.psicoterapia-card+.psicoterapia-card {
+.psicoterapia-card + .psicoterapia-card {
   border-left: 1px solid #DADCBD;
 }
 
@@ -973,7 +945,6 @@ header::before {
 }
 
 .psicoterapia-category-text h2,
-
 .psicoterapia-category-text p {
   margin: 0;
 }
@@ -987,10 +958,8 @@ header::before {
   flex-direction: column;
 }
 
-*
-
-/*Abordagem*/
-* #abordagem {
+/* Abordagem */
+#abordagem {
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -1067,9 +1036,6 @@ header::before {
 }
 
 .abordagem-flip:hover .abordagem-flip-inner,
-
-
-
 .abordagem-flip:focus-within .abordagem-flip-inner {
   transform: rotateY(180deg);
 }
@@ -1256,7 +1222,7 @@ header::before {
     transform var(--motion-duration-soft) var(--motion-ease-out);
 }
 
-/*CONTATO*/
+/* CONTATO */
 
 .contato a,
 footer a {
@@ -1547,7 +1513,7 @@ footer a:hover {
   border: 0;
 }
 
-/*FOOTER*/
+/* FOOTER */
 
 footer {
   display: flex;
@@ -1566,7 +1532,7 @@ footer img {
 }
 
 footer address ul li img,
-footer>ul li img {
+footer > ul li img {
   width: 1.25rem;
   height: 1.25rem;
   object-fit: contain;
