@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <title>Acesso — Julianny Bacelar</title>
+    <link rel="icon" href="img/logo_bege.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Quicksand:wght@500;600;700&display=swap">
+    <link rel="stylesheet" href="painel/painel.css">
+    <script src="painel/login.js" defer></script>
+</head>
+
+<body>
+    <div class="login">
+        <section class="login-lado" aria-label="Apresentação">
+            <a class="marca" href="index.html">
+                <img src="img/logo_bege.png" alt="Logo da Psicóloga Julianny Bacelar" width="100" height="130">
+                <div>
+                    <strong>Julianny Bacelar</strong>
+                <span>Psicóloga · CRP 06/215359</span>
+                </div>
+            </a>
+
+            <div class="login-centro">
+                <div class="chamada">
+                    <p class="login-titulo">Cuidar começa com um espaço para organizar.</p>
+                    <p>Seu consultório em um só lugar.<br>Mais presença no cuidado, mais leveza na rotina.</p>
+                </div>
+
+                <figure class="login-foto">
+                    <img src="img/julianny-sobre-mim.png" alt="Julianny Bacelar, psicóloga" width="358" height="537">
+                    <blockquote>“Um lugar seguro para acolher e seguir em frente.”</blockquote>
+                </figure>
+            </div>
+
+            <p class="eyebrow">Área exclusiva da profissional</p>
+        </section>
+
+        <main class="login-form-lado">
+            <form class="login-form" id="login-form" novalidate>
+                <div>
+                    <p class="eyebrow">Bem-vinda de volta</p>
+                    <h1>Entre no seu espaço</h1>
+                    <p class="intro">Acesse para acompanhar seus pacientes e sua agenda.</p>
+                </div>
+
+                <div class="campo">
+                    <label for="email">E-mail profissional</label>
+                    <input class="entrada" type="email" id="email" name="email" autocomplete="username" placeholder="seuemail@exemplo.com" required>
+                </div>
+
+                <div class="campo">
+                    <label for="senha">Senha</label>
+                    <div class="senha-wrap">
+                        <input class="entrada" type="password" id="senha" name="senha" autocomplete="current-password" required>
+                        <button type="button" id="mostrar-senha" aria-controls="senha">Mostrar</button>
+                    </div>
+                </div>
+
+                <div class="login-linha">
+                    <label><input type="checkbox" id="manter" name="manter"> Manter conectado</label>
+                    <a class="link-acao" href="index.html#contato">Esqueci minha senha</a>
+                </div>
+
+                <p class="erro" id="login-erro" role="alert"></p>
+
+                <button class="btn btn-primario btn-bloco" type="submit">Entrar no painel</button>
+
+                <div class="aviso">
+                    <strong>Seu espaço é privado</strong>
+                    Acesso restrito. Mantenha seus dados de acesso em segurança.
+                </div>
+            </form>
+
+            <footer class="login-rodape">
+                <span>Julianny Bacelar · Psicologia</span>
+                <a href="index.html#contato">Precisa de ajuda? Entre em contato</a>
+            </footer>
+        </main>
+    </div>
+    <script>
+        console.log("Email: juliannybacelar@gmail.com");
+        console.log("Senha: Teste@123");
+    </script>
+</body>
+
+</html>

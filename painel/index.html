@@ -1,0 +1,1067 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <title>Painel — Julianny Bacelar</title>
+    <link rel="icon" href="../img/logo_bege.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Quicksand:wght@500;600;700&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="painel.css">
+    <script src="painel.js"></script>
+</head>
+
+<body>
+    <div class="app">
+        <!-- Menu lateral -->
+        <aside class="sidebar" id="sidebar">
+            <a class="marca" href="#visao-geral">
+                <strong>Julianny Bacelar</strong>
+            </a>
+            <span>Painel da psicóloga</span>
+            <nav aria-label="Menu do painel">
+                <p class="menu-titulo">Consultório</p>
+                <ul class="menu">
+                    <li><a href="#visao-geral"><i class="fa-solid fa-table-cells-large" aria-hidden="true"></i>Visão geral</a></li>
+                    <li><a href="#agenda"><i class="fa-solid fa-calendar" aria-hidden="true"></i>Agenda</a></li>
+                    <li><a href="#solicitacoes"><i class="fa-solid fa-message" aria-hidden="true"></i>Solicitações <span class="contador" id="contador-solicitacoes">3</span></a></li>
+                    <li><a href="#pacientes"><i class="fa-solid fa-user-group" aria-hidden="true"></i>Pacientes</a></li>
+                    <li><a href="#atendimentos"><i class="fa-solid fa-clipboard" aria-hidden="true"></i>Atendimentos</a></li>
+                    <li><a href="#relatorios"><i class="fa-solid fa-chart-column" aria-hidden="true"></i>Relatórios</a></li>
+                    <li><a href="#disponibilidade"><i class="fa-solid fa-clock" aria-hidden="true"></i>Disponibilidade</a></li>
+                    <li><a href="#configuracoes"><i class="fa-solid fa-gear" aria-hidden="true"></i>Configurações</a></li>
+                </ul>
+            </nav>
+            <div class="sidebar-rodape">
+                <div class="cuidado">
+                    <i class="fa-solid fa-lock" aria-hidden="true"></i>
+                    <strong>Espaço de cuidado</strong>
+                    <span class="suave">Acesso exclusivo profissional</span>
+                </div>
+                <button class="sair" type="button" id="sair">
+                    <i class="fa-solid fa-arrow-right-from-bracket" aria-hidden="true"></i>Sair da conta
+                </button>
+            </div>
+        </aside>
+
+        <div class="principal">
+            <header class="topbar">
+                <button class="menu-botao" type="button" id="menu-botao" aria-controls="sidebar" aria-expanded="false" aria-label="Abrir menu">
+                    <i class="fa-solid fa-bars" aria-hidden="true"></i>
+                </button>
+                <nav aria-label="Você está em">
+                    <ol class="migalhas">
+                        <li>Meu consultório</li>
+                        <li id="migalha-atual">Visão geral</li>
+                    </ol>
+                </nav>
+                <div class="perfil">
+                    <button class="perfil-sino" type="button" aria-label="Notificações: solicitações pendentes" data-toast="Você tem solicitações pendentes para revisar.">
+                        <i class="fa-regular fa-bell" aria-hidden="true"></i>
+                    </button>
+                    <div class="perfil-nome">
+                        <strong>Julianny Bacelar</strong>
+                        <span>Psicóloga · CRP 06/215359</span>
+                    </div>
+                    <img src="../img/Ju1.png" alt="" width="40" height="40">
+                </div>
+            </header>
+
+            <main class="conteudo" id="conteudo">
+                <div class="tela" id="tela-visao-geral" data-tela="visao-geral" hidden>
+                    <div class="cabecalho">
+                        <div>
+                            <h1 tabindex="-1">Bom dia, Julianny</h1>
+                            <p>Quinta-feira, 19 de novembro de 2026. Vamos cuidar da sua rotina?</p>
+                        </div>
+                        <div class="cabecalho-acoes">
+                            <a class="btn btn-primario" href="#agenda"><i class="fa-solid fa-plus" aria-hidden="true"></i>Novo agendamento</a>
+                        </div>
+                    </div>
+    
+                    <section class="grade-4" aria-label="Indicadores do dia">
+                        <article class="card card-bege indicador">
+                            <h2 class="rotulo">Atendimentos hoje</h2>
+                            <p class="valor">6</p>
+                            <p class="detalhe">4 online · 2 presenciais</p>
+                        </article>
+                        <article class="card indicador">
+                            <h2 class="rotulo">Pacientes ativos</h2>
+                            <p class="valor">32</p>
+                            <p class="detalhe">Acompanhamento contínuo</p>
+                        </article>
+                        <article class="card indicador">
+                            <h2 class="rotulo">Solicitações pendentes</h2>
+                            <p class="valor">3</p>
+                            <p class="detalhe">2 novas · 1 alteração</p>
+                        </article>
+                        <article class="card indicador">
+                            <h2 class="rotulo">Ocupação da semana</h2>
+                            <p class="valor">80%</p>
+                            <p class="detalhe">24 de 30 horários</p>
+                        </article>
+                    </section>
+    
+                    <div class="grade-principal">
+                        <section class="card" aria-labelledby="agenda-hoje">
+                            <div class="card-cabecalho">
+                                <div>
+                                    <h2 id="agenda-hoje">Sua agenda de hoje</h2>
+                                    <p>6 consultas agendadas</p>
+                                </div>
+                                <a class="link-acao" href="#agenda">Ver agenda <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+                            </div>
+                            <div class="tabela-wrap">
+                                <table class="tabela">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">Horário</th>
+                                            <th scope="col">Paciente / serviço</th>
+                                            <th scope="col">Modalidade</th>
+                                            <th scope="col">Status</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td class="horario"><strong>09:00</strong><span>50 min</span></td>
+                                            <td><strong>Ana Clara Oliveira</strong><span class="sub">Psicoterapia individual</span></td>
+                                            <td>Online</td>
+                                            <td><span class="tag tag-ok">Realizado</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="horario"><strong>10:00</strong><span>50 min</span></td>
+                                            <td><strong>Pedro Henrique Santos</strong><span class="sub">Psicoterapia individual</span></td>
+                                            <td>Online</td>
+                                            <td><span class="tag tag-info">Confirmado</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="horario"><strong>11:00</strong><span>50 min</span></td>
+                                            <td><strong>Luiza Martins</strong><span class="sub">Psicoterapia infantil</span></td>
+                                            <td>Presencial</td>
+                                            <td><span class="tag tag-info">Confirmado</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="horario"><strong>14:00</strong><span>50 min</span></td>
+                                            <td><strong>Mariana Costa</strong><span class="sub">Psicoterapia individual</span></td>
+                                            <td>Online</td>
+                                            <td><span class="tag tag-info">Confirmado</span></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <p class="nota-rodape">Mais 2 atendimentos à tarde</p>
+                        </section>
+    
+                        <div class="pilha">
+                            <section class="card destaque" aria-labelledby="destaque-solicitacoes">
+                                <span class="tag">3 pendentes</span>
+                                <h2 id="destaque-solicitacoes">Um novo horário, um próximo encontro.</h2>
+                                <p>Revise dois pedidos de agendamento e uma alteração excepcional de agenda.</p>
+                                <a class="btn btn-primario btn-bloco" href="#solicitacoes">Revisar solicitações <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+                            </section>
+    
+                            <section class="card card-bege card-proximo" aria-labelledby="proximo">
+                                <p class="eyebrow">A seguir · 10:00</p>
+                                <h2 id="proximo">Pedro Henrique Santos</h2>
+                                <p class="suave pequeno">Online · Psicoterapia individual · 50 min</p>
+                                <a class="btn btn-bloco" href="#atendimentos">Ver atendimento</a>
+                            </section>
+                        </div>
+                    </div>
+    
+                    <section class="card card-bege faixa" aria-labelledby="rotina">
+                        <div>
+                            <h2 id="rotina">Uma rotina organizada abre espaço para o cuidado.</h2>
+                            <p>Você já realizou 16 atendimentos nesta semana. Consulte os indicadores do seu consultório.</p>
+                        </div>
+                        <a class="link-acao" href="#relatorios">Ver relatórios <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+                    </section>
+                </div>
+
+                <div class="tela" id="tela-agenda" data-tela="agenda" hidden>
+                    <div class="cabecalho">
+                        <div>
+                            <h1 tabindex="-1">Agenda</h1>
+                            <p>Uma visão clara dos seus próximos encontros.</p>
+                        </div>
+                        <div class="cabecalho-acoes">
+                            <a class="btn" href="#disponibilidade">Bloquear horário</a>
+                            <button class="btn btn-primario" type="button" data-toast="Novo agendamento: escolha um horário livre na grade."><i class="fa-solid fa-plus" aria-hidden="true"></i>Novo agendamento</button>
+                        </div>
+                    </div>
+    
+                    <div class="barra-filtros">
+                        <div class="grupo">
+                            <h2>16 — 20 novembro, 2026</h2>
+                            <button class="btn" type="button" aria-label="Semana anterior" data-toast="Exibindo exemplo da semana atual."><i class="fa-solid fa-chevron-left" aria-hidden="true"></i></button>
+                            <button class="btn" type="button" aria-label="Próxima semana" data-toast="Exibindo exemplo da semana atual."><i class="fa-solid fa-chevron-right" aria-hidden="true"></i></button>
+                            <button class="btn" type="button" data-toast="Você já está na semana atual.">Hoje</button>
+                        </div>
+                        <div class="grupo">
+                            <label class="sr-only" for="filtro-modalidade">Modalidade</label>
+                            <select class="entrada" id="filtro-modalidade">
+                                <option>Todas as modalidades</option>
+                                <option>Online</option>
+                                <option>Presencial</option>
+                            </select>
+                            <label class="sr-only" for="filtro-visao">Visualização</label>
+                            <select class="entrada" id="filtro-visao">
+                                <option>Semana</option>
+                                <option>Dia</option>
+                            </select>
+                            <a class="btn" href="#disponibilidade">Disponibilidade</a>
+                        </div>
+                    </div>
+    
+                    <section class="card agenda-wrap" aria-label="Agenda da semana">
+                        <table class="agenda">
+                            <caption class="sr-only">Consultas de 16 a 20 de novembro de 2026</caption>
+                            <thead>
+                                <tr>
+                                    <th scope="col"><span class="sr-only">Horário</span></th>
+                                    <th scope="col">SEG · 16</th>
+                                    <th scope="col">TER · 17</th>
+                                    <th scope="col">QUA · 18</th>
+                                    <th scope="col" class="hoje">QUI · 19 <span class="sr-only">(hoje)</span></th>
+                                    <th scope="col">SEX · 20</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                    <tr>
+                                        <th scope="row">09:00</th>
+                                        <td><div class="evento"><strong>Fernanda Lima</strong><span>Online · 50 min</span></div></td>
+                                        <td><div class="evento"><strong>Carolina Freitas</strong><span>Online · 50 min</span></div></td>
+                                        <td><div class="evento"><strong>Mariana Costa</strong><span>Online · 50 min</span></div></td>
+                                        <td class="hoje"><div class="evento"><strong>Ana Clara Oliveira</strong><span>Online · 50 min · Feito</span></div></td>
+                                        <td><div class="evento"><strong>Isabela Dias</strong><span>Online · 50 min</span></div></td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">10:00</th>
+                                        <td><div class="evento"><strong>Bruno Teixeira</strong><span>Online · 50 min</span></div></td>
+                                        <td><div class="evento"><strong>Ana Clara Oliveira</strong><span>Online · 50 min</span></div></td>
+                                        <td><div class="evento"><strong>Daniela Azevedo</strong><span>Online · 50 min</span></div></td>
+                                        <td class="hoje"><div class="evento"><strong>Pedro Henrique Santos</strong><span>Online · 50 min</span></div></td>
+                                        <td><div class="evento"><strong>Sofia Mendes</strong><span>Online · 50 min</span></div></td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">11:00</th>
+                                        <td><div class="evento evento-presencial"><strong>Lucas Almeida</strong><span>Presencial · 50 min</span></div></td>
+                                        <td><div class="evento evento-presencial"><strong>João Miguel</strong><span>Presencial · 50 min</span></div></td>
+                                        <td><div class="evento evento-presencial"><strong>Luiza Martins</strong><span>Presencial · 50 min</span></div></td>
+                                        <td class="hoje"><div class="evento evento-presencial"><strong>Luiza Martins</strong><span>Presencial · 50 min</span></div></td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">12:00</th>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td class="hoje"></td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">13:00</th>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td class="hoje"></td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">14:00</th>
+                                        <td><div class="evento"><strong>Sofia Mendes</strong><span>Online · 50 min</span></div></td>
+                                        <td><div class="evento evento-presencial"><strong>Rafael Souza</strong><span>Presencial · 50 min</span></div></td>
+                                        <td></td>
+                                        <td class="hoje"><div class="evento"><strong>Mariana Costa</strong><span>Online · 50 min</span></div></td>
+                                        <td><div class="evento"><strong>Fernanda Lima</strong><span>Online · 50 min</span></div></td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">15:00</th>
+                                        <td><div class="evento"><strong>Helena Rocha</strong><span>Online · 50 min</span></div></td>
+                                        <td></td>
+                                        <td><div class="evento"><strong>Pedro Henrique</strong><span>Online · 50 min</span></div></td>
+                                        <td class="hoje"><div class="evento evento-presencial"><strong>Rafael Souza</strong><span>Presencial · 50 min</span></div></td>
+                                        <td rowspan="2"><div class="evento evento-bloqueado"><strong>15:00 — 17:00</strong><span>Horário bloqueado · Compromisso pessoal</span></div></td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">16:00</th>
+                                        <td></td>
+                                        <td><div class="evento"><strong>Gabriel Alves</strong><span>Online · 50 min</span></div></td>
+                                        <td><div class="evento"><strong>Mateus Ribeiro</strong><span>Online · 50 min</span></div></td>
+                                        <td class="hoje"><div class="evento"><strong>Camila Rodrigues</strong><span>Online · 50 min</span></div></td>
+                                    </tr>
+                            </tbody>
+                        </table>
+                    </section>
+    
+                    <div class="legenda">
+                        <span>Online</span>
+                        <span class="l-presencial">Presencial</span>
+                        <span class="l-bloqueado">Bloqueado</span>
+                        <p class="fuso">Fuso horário: Brasília (GMT-3) · Duração padrão: 50 min</p>
+                    </div>
+    
+                </div>
+
+                <div class="tela" id="tela-solicitacoes" data-tela="solicitacoes" hidden>
+                    <div class="cabecalho">
+                        <div>
+                            <h1 tabindex="-1">Solicitações de agendamento</h1>
+                            <p>Acolha novos pedidos e revise alterações na sua agenda.</p>
+                        </div>
+                        <div class="cabecalho-acoes">
+                            <a class="btn" href="#agenda">Ver agenda <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+                        </div>
+                    </div>
+    
+                    <div class="barra-filtros">
+                        <div class="abas" role="tablist" aria-label="Filtrar solicitações">
+                            <button class="aba" type="button" role="tab" aria-selected="true" aria-controls="lista-solicitacoes" data-filtro="pendente">Pendentes <span class="tag" id="aba-pendentes-total">3</span></button>
+                            <button class="aba" type="button" role="tab" aria-selected="false" aria-controls="lista-solicitacoes" data-filtro="aprovada">Aprovadas</button>
+                            <button class="aba" type="button" role="tab" aria-selected="false" aria-controls="lista-solicitacoes" data-filtro="recusada">Recusadas</button>
+                        </div>
+                        <p class="suave pequeno">Mais recentes primeiro</p>
+                    </div>
+    
+                    <div class="grade-principal">
+                        <div class="lista-cards" id="lista-solicitacoes" role="tabpanel">
+                            <article class="card solicitacao" data-status="pendente" data-tipo="novo"
+                                data-nome="Beatriz Ferreira" data-servico="Psicoterapia individual · Adulto · Online · 50 min"
+                                data-solicitado="Sexta, 20 nov · 13:00 às 13:50"
+                                data-motivo="“Gostaria de iniciar acompanhamento, de preferência no horário de almoço.”">
+                                <p><span class="tag tag-ok">Novo agendamento</span></p>
+                                <h2>Beatriz Ferreira</h2>
+                                <p class="quando">20 nov · 13:00 · Online</p>
+                                <p class="suave pequeno">Psicoterapia individual · Adulto</p>
+                                <div class="rodape">
+                                    <span>Recebida há 25 minutos</span>
+                                    <button class="link-acao" type="button" data-analisar>Analisar <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></button>
+                                </div>
+                            </article>
+    
+                            <article class="card solicitacao" data-status="pendente" data-tipo="novo"
+                                data-nome="Gabriel Alves" data-servico="Psicoterapia individual · Adolescente · Online · 50 min"
+                                data-solicitado="Terça, 24 nov · 10:00 às 10:50"
+                                data-motivo="“Pedido feito pela responsável, que acompanhará a primeira sessão.”">
+                                <p><span class="tag tag-ok">Novo agendamento</span></p>
+                                <h2>Gabriel Alves</h2>
+                                <p class="quando">24 nov · 10:00 · Online</p>
+                                <p class="suave pequeno">Psicoterapia individual · Adolescente</p>
+                                <div class="rodape">
+                                    <span>Recebida há 1 hora</span>
+                                    <button class="link-acao" type="button" data-analisar>Analisar <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></button>
+                                </div>
+                            </article>
+    
+                            <article class="card solicitacao" data-status="pendente" data-tipo="alteracao"
+                                data-nome="Camila Rodrigues" data-servico="Psicoterapia individual · Online · 50 min"
+                                data-atual="Quinta, 19 nov · 16:00 às 16:50"
+                                data-solicitado="Quinta, 19 nov · 17:00 às 17:50"
+                                data-motivo="“Tive uma mudança no trabalho e gostaria de começar a sessão uma hora mais tarde.”">
+                                <p><span class="tag tag-info">Alteração excepcional</span></p>
+                                <h2>Camila Rodrigues</h2>
+                                <p class="quando">19 nov · 16:00 → 17:00 · Online</p>
+                                <p class="suave pequeno">Fora da disponibilidade padrão</p>
+                                <div class="rodape">
+                                    <span>Recebida há 2 horas</span>
+                                    <button class="link-acao" type="button" data-analisar>Analisar <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></button>
+                                </div>
+                            </article>
+    
+                            <article class="card solicitacao" data-status="aprovada" data-tipo="novo" hidden
+                                data-nome="Isabela Dias" data-servico="Psicoterapia individual · Adulto · Online · 50 min"
+                                data-solicitado="Sexta, 20 nov · 09:00 às 09:50"
+                                data-motivo="“Prefiro sessões pela manhã.”">
+                                <p><span class="tag tag-ok">Novo agendamento</span></p>
+                                <h2>Isabela Dias</h2>
+                                <p class="quando">20 nov · 09:00 · Online</p>
+                                <p class="suave pequeno">Psicoterapia individual · Adulto</p>
+                                <div class="rodape">
+                                    <span>Recebida ontem</span>
+                                    <button class="link-acao" type="button" data-analisar>Aprovada</button>
+                                </div>
+                            </article>
+    
+                            <p class="vazio" id="lista-vazia" hidden>Nenhuma solicitação nesta lista.</p>
+                        </div>
+    
+                        <section class="card detalhe" id="detalhe-solicitacao" aria-live="polite" aria-labelledby="detalhe-titulo">
+                            <h2 id="detalhe-titulo" data-campo="titulo">Revisar alteração</h2>
+                            <div>
+                                <p class="forte" data-campo="nome">Camila Rodrigues</p>
+                                <p class="suave pequeno" data-campo="servico">Psicoterapia individual · Online · 50 min</p>
+                            </div>
+                            <hr class="separador">
+                            <div class="detalhe-bloco" data-campo="atual-bloco">
+                                <span class="eyebrow">Horário atual</span>
+                                <p class="forte" data-campo="atual">Quinta, 19 nov · 16:00 às 16:50</p>
+                            </div>
+                            <div class="detalhe-bloco">
+                                <span class="eyebrow">Horário solicitado</span>
+                                <p class="forte" data-campo="solicitado">Quinta, 19 nov · 17:00 às 17:50</p>
+                            </div>
+                            <div class="aviso aviso-alerta" data-campo="alerta">
+                                <strong>Fora da disponibilidade · sem conflito</strong>
+                                A aprovação libera somente este horário, nesta data.
+                            </div>
+                            <div>
+                                <p class="forte pequeno">Motivo informado pela paciente</p>
+                                <p class="citacao" data-campo="motivo">“Tive uma mudança no trabalho e gostaria de começar a sessão uma hora mais tarde.”</p>
+                            </div>
+                            <hr class="separador">
+                            <p class="ajuda">Sua disponibilidade recorrente não será alterada.</p>
+                            <div class="acoes-duplas" data-campo="acoes">
+                                <button class="btn" type="button" data-campo="recusar">Recusar</button>
+                                <button class="btn btn-primario" type="button" data-campo="autorizar">Autorizar alteração</button>
+                            </div>
+                        </section>
+                    </div>
+                </div>
+
+                <div class="tela" id="tela-pacientes" data-tela="pacientes" hidden>
+                    <div class="cabecalho">
+                        <div>
+                            <h1 tabindex="-1">Pacientes</h1>
+                            <p>Pessoas, próximos encontros e histórico administrativo.</p>
+                        </div>
+                        <div class="cabecalho-acoes">
+                            <button class="btn btn-primario" type="button" data-toast="Cadastro de paciente disponível na próxima versão."><i class="fa-solid fa-plus" aria-hidden="true"></i>Cadastrar paciente</button>
+                        </div>
+                    </div>
+    
+                    <div class="barra-filtros">
+                        <div class="grupo">
+                            <label class="sr-only" for="busca-paciente">Buscar paciente</label>
+                            <input class="entrada" type="search" id="busca-paciente" placeholder="Buscar por nome do paciente...">
+                            <label class="sr-only" for="filtro-status">Situação</label>
+                            <select class="entrada" id="filtro-status">
+                                <option>Ativos · 32</option>
+                                <option>Inativos · 4</option>
+                            </select>
+                        </div>
+                        <p class="suave pequeno">36 pacientes cadastrados</p>
+                    </div>
+    
+                    <div class="grade-principal">
+                        <section class="card" aria-labelledby="titulo-lista">
+                            <h2 class="sr-only" id="titulo-lista">Lista de pacientes</h2>
+                            <div class="listagem-topo eyebrow" aria-hidden="true">
+                                <span>Paciente</span>
+                                <span>Próxima consulta</span>
+                            </div>
+                            <hr class="separador">
+                            <ul class="lista-selecao" id="lista-pacientes">
+                                <li><button class="item-selecao" type="button" aria-pressed="true" data-nome="Ana Clara Oliveira" data-desde="04 ago 2026" data-perfil="Adulto" data-servico="Psicoterapia individual · Online" data-proxima="24 nov 2026 · 10:00 às 10:50">
+                                    <span class="info"><strong>Ana Clara Oliveira</strong><span>Adulto · Online</span></span>
+                                    <span class="quando">24 nov · 10:00</span>
+                                    <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
+                                </button></li>
+                                <li><button class="item-selecao" type="button" aria-pressed="false" data-nome="Pedro Henrique Santos" data-desde="12 mai 2026" data-perfil="Adulto" data-servico="Psicoterapia individual · Online" data-proxima="Hoje · 10:00 às 10:50">
+                                    <span class="info"><strong>Pedro Henrique Santos</strong><span>Adulto · Online</span></span>
+                                    <span class="quando">Hoje · 10:00</span>
+                                    <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
+                                </button></li>
+                                <li><button class="item-selecao" type="button" aria-pressed="false" data-nome="Luiza Martins" data-desde="21 fev 2026" data-perfil="Infantil" data-servico="Psicoterapia infantil · Presencial" data-proxima="Hoje · 11:00 às 11:50">
+                                    <span class="info"><strong>Luiza Martins</strong><span>Infantil · Presencial</span></span>
+                                    <span class="quando">Hoje · 11:00</span>
+                                    <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
+                                </button></li>
+                                <li><button class="item-selecao" type="button" aria-pressed="false" data-nome="Mariana Costa" data-desde="09 jan 2026" data-perfil="Adulto" data-servico="Psicoterapia individual · Online" data-proxima="Hoje · 14:00 às 14:50">
+                                    <span class="info"><strong>Mariana Costa</strong><span>Adulto · Online</span></span>
+                                    <span class="quando">Hoje · 14:00</span>
+                                    <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
+                                </button></li>
+                                <li><button class="item-selecao" type="button" aria-pressed="false" data-nome="Rafael Souza" data-desde="30 jun 2026" data-perfil="Infantil" data-servico="Psicoterapia infantil · Presencial" data-proxima="Hoje · 15:00 às 15:50">
+                                    <span class="info"><strong>Rafael Souza</strong><span>Infantil · Presencial</span></span>
+                                    <span class="quando">Hoje · 15:00</span>
+                                    <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
+                                </button></li>
+                                <li><button class="item-selecao" type="button" aria-pressed="false" data-nome="Camila Rodrigues" data-desde="17 mar 2026" data-perfil="Adulto" data-servico="Psicoterapia individual · Online" data-proxima="Hoje · 16:00 às 16:50">
+                                    <span class="info"><strong>Camila Rodrigues</strong><span>Adulto · Online</span></span>
+                                    <span class="quando">Hoje · 16:00</span>
+                                    <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
+                                </button></li>
+                                <li><button class="item-selecao" type="button" aria-pressed="false" data-nome="Sofia Mendes" data-desde="02 set 2026" data-perfil="Adolescente" data-servico="Psicoterapia individual · Online" data-proxima="20 nov 2026 · 10:00 às 10:50">
+                                    <span class="info"><strong>Sofia Mendes</strong><span>Adolescente · Online</span></span>
+                                    <span class="quando">20 nov · 10:00</span>
+                                    <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
+                                </button></li>
+                            </ul>
+                            <div class="paginacao">
+                                <span id="contagem-pacientes" aria-live="polite">Exibindo 7 de 32 pacientes ativos</span>
+                                <span>Página 1 de 5</span>
+                            </div>
+                        </section>
+    
+                        <section class="card detalhe" id="ficha-paciente" aria-live="polite" aria-labelledby="ficha-nome">
+                            <div class="card-cabecalho">
+                                <span class="tag tag-ok">Ativo</span>
+                                <button class="link-acao" type="button" data-toast="Edição de cadastro disponível na próxima versão.">Editar cadastro</button>
+                            </div>
+                            <div class="ficha-titulo">
+                                <h2 id="ficha-nome" data-campo="nome">Ana Clara Oliveira</h2>
+                                <p class="suave pequeno" data-campo="desde">Paciente desde 04 ago 2026 · Adulto</p>
+                            </div>
+                            <hr class="separador">
+                            <dl class="ficha-dados">
+                                <div>
+                                    <dt>Serviço</dt>
+                                    <dd data-campo="servico">Psicoterapia individual · Online</dd>
+                                </div>
+                                <div>
+                                    <dt>Próxima consulta</dt>
+                                    <dd data-campo="proxima">24 nov 2026 · 10:00 às 10:50</dd>
+                                </div>
+                            </dl>
+                            <hr class="separador">
+                            <h3>Histórico administrativo</h3>
+                            <table class="tabela">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">Data e horário</th>
+                                        <th scope="col">Situação</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr><td>19 nov · 09:00</td><td><span class="tag tag-ok">Realizado</span></td></tr>
+                                    <tr><td>17 nov · 10:00</td><td><span class="tag tag-ok">Realizado</span></td></tr>
+                                    <tr><td>10 nov · 10:00</td><td><span class="tag tag-ok">Realizado</span></td></tr>
+                                    <tr><td>03 nov · 10:00</td><td><span class="tag tag-erro">Cancelado</span></td></tr>
+                                </tbody>
+                            </table>
+                            <a class="link-acao" href="#relatorios">Ver histórico completo <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+                        </section>
+                    </div>
+    
+                </div>
+
+                <div class="tela" id="tela-atendimentos" data-tela="atendimentos" hidden>
+                    <div class="cabecalho">
+                        <div>
+                            <h1 tabindex="-1">Atendimentos</h1>
+                            <p>Acompanhe os pacientes agendados e registre cada encontro.</p>
+                        </div>
+                        <div class="cabecalho-acoes">
+                            <label class="sr-only" for="data-dia">Data</label>
+                            <input class="entrada" type="date" id="data-dia" value="2026-11-19">
+                        </div>
+                    </div>
+    
+                    <div class="grade-lateral">
+                        <section class="card" aria-labelledby="agendados-hoje">
+                            <div class="card-cabecalho">
+                                <div>
+                                    <h2 id="agendados-hoje">Agendados hoje</h2>
+                                    <p>6 consultas · 1 realizada</p>
+                                </div>
+                            </div>
+                            <ul class="lista-selecao" id="lista-atendimentos">
+                                <li><button class="item-selecao" type="button" aria-pressed="false" data-nome="Ana Clara Oliveira" data-servico="Psicoterapia individual · Online" data-inicio="09:00" data-termino="09:50">
+                                    <span class="info"><span class="hora">09:00</span><strong>Ana Clara Oliveira</strong><span class="situacao">Realizado</span></span>
+                                </button></li>
+                                <li><button class="item-selecao" type="button" aria-pressed="true" data-nome="Pedro Henrique Santos" data-servico="Psicoterapia individual · Online" data-inicio="10:00" data-termino="10:50">
+                                    <span class="info"><span class="hora">10:00</span><strong>Pedro Henrique Santos</strong><span class="situacao">A registrar</span></span>
+                                </button></li>
+                                <li><button class="item-selecao" type="button" aria-pressed="false" data-nome="Luiza Martins" data-servico="Psicoterapia infantil · Presencial" data-inicio="11:00" data-termino="11:50">
+                                    <span class="info"><span class="hora">11:00</span><strong>Luiza Martins</strong><span class="situacao">Confirmado</span></span>
+                                </button></li>
+                                <li><button class="item-selecao" type="button" aria-pressed="false" data-nome="Mariana Costa" data-servico="Psicoterapia individual · Online" data-inicio="14:00" data-termino="14:50">
+                                    <span class="info"><span class="hora">14:00</span><strong>Mariana Costa</strong><span class="situacao">Confirmado</span></span>
+                                </button></li>
+                                <li><button class="item-selecao" type="button" aria-pressed="false" data-nome="Rafael Souza" data-servico="Psicoterapia infantil · Presencial" data-inicio="15:00" data-termino="15:50">
+                                    <span class="info"><span class="hora">15:00</span><strong>Rafael Souza</strong><span class="situacao">Confirmado</span></span>
+                                </button></li>
+                                <li><button class="item-selecao" type="button" aria-pressed="false" data-nome="Camila Rodrigues" data-servico="Psicoterapia individual · Online" data-inicio="16:00" data-termino="16:50">
+                                    <span class="info"><span class="hora">16:00</span><strong>Camila Rodrigues</strong><span class="situacao">Confirmado</span></span>
+                                </button></li>
+                            </ul>
+                        </section>
+    
+                        <form class="card form-pilha" id="form-atendimento" aria-labelledby="registrar-titulo">
+                            <div class="card-cabecalho detalhe-cabecalho">
+                                <div>
+                                    <h2 id="registrar-titulo">Registrar atendimento</h2>
+                                    <p class="forte" data-campo="nome">Pedro Henrique Santos</p>
+                                    <p data-campo="servico">Psicoterapia individual · Online</p>
+                                </div>
+                                <span class="tag tag-info" data-campo="status" aria-live="polite">A registrar</span>
+                            </div>
+    
+                            <hr class="separador">
+    
+                            <div class="form-grade">
+                                <div class="campo">
+                                    <label for="data-atendimento">Data do atendimento</label>
+                                    <input class="entrada" type="date" id="data-atendimento" name="data" value="2026-11-19" required>
+                                </div>
+                                <div class="campo">
+                                    <label for="inicio">Início</label>
+                                    <input class="entrada" type="time" id="inicio" name="inicio" value="10:00" required>
+                                </div>
+                                <div class="campo">
+                                    <label for="termino">Término</label>
+                                    <input class="entrada" type="time" id="termino" name="termino" value="10:50" required>
+                                </div>
+                            </div>
+    
+                            <fieldset class="opcoes">
+                                <legend>Comparecimento</legend>
+                                <label class="opcao"><input type="radio" name="comparecimento" value="compareceu" checked><span>Compareceu</span></label>
+                                <label class="opcao"><input type="radio" name="comparecimento" value="faltou"><span>Não compareceu</span></label>
+                                <label class="opcao"><input type="radio" name="comparecimento" value="cancelado"><span>Cancelado</span></label>
+                            </fieldset>
+    
+                            <div class="campo">
+                                <label for="observacoes">Observações administrativas</label>
+                                <textarea class="entrada" id="observacoes" name="observacoes" aria-describedby="obs-ajuda">Sessão realizada no horário previsto, sem intercorrências administrativas.</textarea>
+                                <p class="ajuda" id="obs-ajuda">Não inclua informações clínicas ou conteúdo sigiloso da sessão.</p>
+                            </div>
+    
+                            <p class="aviso">Ao salvar, a consulta será marcada como realizada e incluída no histórico.</p>
+    
+                            <hr class="separador">
+    
+                            <div class="acoes-form">
+                                <a class="btn" href="#visao-geral">Cancelar</a>
+                                <button class="btn btn-primario" type="submit">Salvar atendimento</button>
+                            </div>
+                        </form>
+                    </div>
+    
+                    <p class="nota-rodape">Registro administrativo · Conteúdo clínico deve ser mantido em ambiente apropriado e sigiloso.</p>
+                </div>
+
+                <div class="tela" id="tela-relatorios" data-tela="relatorios" hidden>
+                    <div class="cabecalho">
+                        <div>
+                            <h1 tabindex="-1">Relatórios de atendimentos</h1>
+                            <p>Entenda sua rotina com informações administrativas, sem dados clínicos.</p>
+                        </div>
+                        <div class="cabecalho-acoes">
+                            <button class="btn" type="button" onclick="window.print()"><i class="fa-solid fa-download" aria-hidden="true"></i>Exportar relatório</button>
+                        </div>
+                    </div>
+    
+                    <div class="barra-filtros">
+                        <div class="grupo">
+                            <label class="sr-only" for="periodo">Período</label>
+                            <select class="entrada" id="periodo">
+                                <option>01 — 19 nov, 2026</option>
+                                <option>Outubro, 2026</option>
+                                <option>Setembro, 2026</option>
+                            </select>
+                            <label class="sr-only" for="modalidade">Modalidade</label>
+                            <select class="entrada" id="modalidade">
+                                <option>Todas as modalidades</option>
+                                <option>Online</option>
+                                <option>Presencial</option>
+                            </select>
+                        </div>
+                        <p class="suave pequeno">Atualizado hoje, às 09:55</p>
+                    </div>
+    
+                    <section class="grade-4" aria-label="Resumo do período">
+                        <article class="card indicador">
+                            <h2 class="rotulo">Consultas no período</h2>
+                            <p class="valor">80</p>
+                            <p class="detalhe">Todos os agendamentos</p>
+                        </article>
+                        <article class="card card-bege indicador">
+                            <h2 class="rotulo">Atendimentos realizados</h2>
+                            <p class="valor">68</p>
+                            <p class="detalhe">85% das consultas</p>
+                        </article>
+                        <article class="card indicador">
+                            <h2 class="rotulo">Cancelamentos</h2>
+                            <p class="valor">8</p>
+                            <p class="detalhe">10% das consultas</p>
+                        </article>
+                        <article class="card indicador">
+                            <h2 class="rotulo">Não comparecimentos</h2>
+                            <p class="valor">4</p>
+                            <p class="detalhe">5% das consultas</p>
+                        </article>
+                    </section>
+    
+                    <div class="grade-principal">
+                        <section class="card" aria-labelledby="grafico-semana">
+                            <div class="card-cabecalho">
+                                <div>
+                                    <h2 id="grafico-semana">Atendimentos realizados na semana</h2>
+                                    <p>16 a 20 de novembro · 16 realizados até agora</p>
+                                </div>
+                            </div>
+                            <div class="grafico" role="img" aria-label="Segunda 5, terça 5, quarta 5, quinta 1, sexta 0 atendimentos realizados">
+                                <div class="barra">5<i style="height: 83%"></i></div>
+                                <div class="barra">5<i style="height: 83%"></i></div>
+                                <div class="barra">5<i style="height: 83%"></i></div>
+                                <div class="barra atual">1<i style="height: 17%"></i></div>
+                                <div class="barra">0<i style="height: 0"></i></div>
+                            </div>
+                            <div class="grafico-eixo" aria-hidden="true">
+                                <span>Seg · 16</span>
+                                <span>Ter · 17</span>
+                                <span>Qua · 18</span>
+                                <span>Qui · 19</span>
+                                <span>Sex · 20</span>
+                            </div>
+                        </section>
+    
+                        <section class="card" aria-labelledby="por-modalidade">
+                            <div class="card-cabecalho">
+                                <div>
+                                    <h2 id="por-modalidade">Por modalidade</h2>
+                                    <p>Dos 68 atendimentos realizados no período</p>
+                                </div>
+                            </div>
+                            <div class="progresso">
+                                <div class="progresso-topo"><strong>Online</strong><span>51 · 75%</span></div>
+                                <div class="progresso-trilho"><i style="width: 75%"></i></div>
+                            </div>
+                            <div class="progresso">
+                                <div class="progresso-topo"><strong>Presencial</strong><span>17 · 25%</span></div>
+                                <div class="progresso-trilho"><i class="cobre" style="width: 25%"></i></div>
+                            </div>
+                            <p class="ajuda">Modalidade registrada em cada consulta.</p>
+                        </section>
+                    </div>
+    
+                    <section class="card" aria-labelledby="ultimos">
+                        <div class="card-cabecalho">
+                            <h2 id="ultimos">Últimos atendimentos registrados</h2>
+                            <a class="link-acao" href="#atendimentos">Ver todos <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+                        </div>
+                        <div class="tabela-wrap">
+                            <table class="tabela">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">Paciente</th>
+                                        <th scope="col">Data e horário</th>
+                                        <th scope="col">Modalidade</th>
+                                        <th scope="col">Situação</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr><td class="forte">Ana Clara Oliveira</td><td>19 nov 2026 · 09:00</td><td>Online</td><td><span class="tag tag-ok">Realizado</span></td></tr>
+                                    <tr><td class="forte">Pedro Henrique Santos</td><td>18 nov 2026 · 15:00</td><td>Online</td><td><span class="tag tag-ok">Realizado</span></td></tr>
+                                    <tr><td class="forte">Luiza Martins</td><td>18 nov 2026 · 11:00</td><td>Presencial</td><td><span class="tag tag-ok">Realizado</span></td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </section>
+                </div>
+
+                <div class="tela" id="tela-disponibilidade" data-tela="disponibilidade" hidden>
+                    <div class="cabecalho">
+                        <div>
+                            <h1 tabindex="-1">Disponibilidade</h1>
+                            <p>Defina quando e por quanto tempo você pode atender.</p>
+                        </div>
+                        <div class="cabecalho-acoes">
+                            <button class="btn btn-primario" type="button" data-toast="Disponibilidade salva.">Salvar disponibilidade</button>
+                        </div>
+                    </div>
+    
+                    <div class="grade-principal">
+                        <div class="pilha">
+                            <section class="card" aria-labelledby="semana-titulo">
+                                <div class="card-cabecalho">
+                                    <div>
+                                        <h2 id="semana-titulo">Sua semana de atendimento</h2>
+                                        <p>Horários recorrentes · Fuso de Brasília (GMT-3)</p>
+                                    </div>
+                                </div>
+                                <div class="tabela-wrap">
+                                    <table class="dias" id="tabela-dias">
+                                        <thead>
+                                            <tr>
+                                                <th scope="col">Dia</th>
+                                                <th scope="col">Períodos disponíveis</th>
+                                                <th scope="col"><span class="sr-only">Ações</span></th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                    <tr>
+                                        <td>
+                                            <span class="dia">
+                                                <span class="interruptor"><input type="checkbox" id="dia-segunda" data-dia checked><span></span></span>
+                                                <label for="dia-segunda">Segunda-feira</label>
+                                            </span>
+                                        </td>
+                                        <td>
+                                            <span class="periodos">
+                                                <input class="periodo" type="text" value="09:00 — 12:00" readonly aria-label="Segunda-feira, período da manhã">
+                                                <input class="periodo" type="text" value="14:00 — 17:00" readonly aria-label="Segunda-feira, período da tarde">
+                                            </span>
+                                        </td>
+                                        <td><button class="link-acao" type="button" data-editar>Editar</button></td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <span class="dia">
+                                                <span class="interruptor"><input type="checkbox" id="dia-terca" data-dia checked><span></span></span>
+                                                <label for="dia-terca">Terça-feira</label>
+                                            </span>
+                                        </td>
+                                        <td>
+                                            <span class="periodos">
+                                                <input class="periodo" type="text" value="09:00 — 12:00" readonly aria-label="Terça-feira, período da manhã">
+                                                <input class="periodo" type="text" value="14:00 — 17:00" readonly aria-label="Terça-feira, período da tarde">
+                                            </span>
+                                        </td>
+                                        <td><button class="link-acao" type="button" data-editar>Editar</button></td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <span class="dia">
+                                                <span class="interruptor"><input type="checkbox" id="dia-quarta" data-dia checked><span></span></span>
+                                                <label for="dia-quarta">Quarta-feira</label>
+                                            </span>
+                                        </td>
+                                        <td>
+                                            <span class="periodos">
+                                                <input class="periodo" type="text" value="09:00 — 12:00" readonly aria-label="Quarta-feira, período da manhã">
+                                                <input class="periodo" type="text" value="14:00 — 17:00" readonly aria-label="Quarta-feira, período da tarde">
+                                            </span>
+                                        </td>
+                                        <td><button class="link-acao" type="button" data-editar>Editar</button></td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <span class="dia">
+                                                <span class="interruptor"><input type="checkbox" id="dia-quinta" data-dia checked><span></span></span>
+                                                <label for="dia-quinta">Quinta-feira</label>
+                                            </span>
+                                        </td>
+                                        <td>
+                                            <span class="periodos">
+                                                <input class="periodo" type="text" value="09:00 — 12:00" readonly aria-label="Quinta-feira, período da manhã">
+                                                <input class="periodo" type="text" value="14:00 — 17:00" readonly aria-label="Quinta-feira, período da tarde">
+                                            </span>
+                                        </td>
+                                        <td><button class="link-acao" type="button" data-editar>Editar</button></td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <span class="dia">
+                                                <span class="interruptor"><input type="checkbox" id="dia-sexta" data-dia checked><span></span></span>
+                                                <label for="dia-sexta">Sexta-feira</label>
+                                            </span>
+                                        </td>
+                                        <td>
+                                            <span class="periodos">
+                                                <input class="periodo" type="text" value="09:00 — 12:00" readonly aria-label="Sexta-feira, período da manhã">
+                                                <input class="periodo" type="text" value="14:00 — 17:00" readonly aria-label="Sexta-feira, período da tarde">
+                                            </span>
+                                        </td>
+                                        <td><button class="link-acao" type="button" data-editar>Editar</button></td>
+                                    </tr>
+                                    <tr class="desligado">
+                                        <td>
+                                            <span class="dia">
+                                                <span class="interruptor"><input type="checkbox" id="dia-sabado" data-dia><span></span></span>
+                                                <label for="dia-sabado">Sábado</label>
+                                            </span>
+                                        </td>
+                                        <td>
+                                            <span class="periodos">
+                                                <input class="periodo" type="text" value="Sem atendimento" readonly disabled aria-label="Sábado, período">
+                                            </span>
+                                        </td>
+                                        <td><button class="link-acao" type="button" data-editar>Editar</button></td>
+                                    </tr>
+                                    <tr class="desligado">
+                                        <td>
+                                            <span class="dia">
+                                                <span class="interruptor"><input type="checkbox" id="dia-domingo" data-dia><span></span></span>
+                                                <label for="dia-domingo">Domingo</label>
+                                            </span>
+                                        </td>
+                                        <td>
+                                            <span class="periodos">
+                                                <input class="periodo" type="text" value="Sem atendimento" readonly disabled aria-label="Domingo, período">
+                                            </span>
+                                        </td>
+                                        <td><button class="link-acao" type="button" data-editar>Editar</button></td>
+                                    </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </section>
+    
+                            <section class="card card-bege" aria-labelledby="respeita">
+                                <h2 id="respeita">Uma agenda que respeita o seu tempo</h2>
+                                <p class="suave pequeno espaco-topo">As alterações valem para novos agendamentos. Consultas já confirmadas permanecem na agenda; exceções precisam da sua autorização.</p>
+                                <p class="ajuda espaco-topo">30 horários padrão por semana · 6 por dia útil</p>
+                            </section>
+                        </div>
+    
+                        <div class="pilha">
+                            <section class="card form-pilha" aria-labelledby="duracao-titulo">
+                                <h2 id="duracao-titulo">Duração das consultas</h2>
+                                <div class="form-grade form-grade-2">
+                                    <div class="campo">
+                                        <label for="duracao">Duração padrão</label>
+                                        <select class="entrada" id="duracao">
+                                            <option>50 minutos</option>
+                                            <option>60 minutos</option>
+                                            <option>40 minutos</option>
+                                        </select>
+                                    </div>
+                                    <div class="campo">
+                                        <label for="intervalo">Intervalo</label>
+                                        <select class="entrada" id="intervalo">
+                                            <option>10 minutos</option>
+                                            <option>15 minutos</option>
+                                            <option>Sem intervalo</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <p class="ajuda">Cada consulta ocupa um bloco de 60 minutos.</p>
+                            </section>
+    
+                            <form class="card form-pilha" aria-labelledby="bloqueio-titulo" onsubmit="event.preventDefault(); avisar('Horário bloqueado na agenda.');">
+                                <div>
+                                    <h2 id="bloqueio-titulo">Bloqueio de horário</h2>
+                                    <p class="espaco-topo"><span class="tag">Bloqueio existente</span></p>
+                                </div>
+                                <div class="campo">
+                                    <label for="bloqueio-data">Data</label>
+                                    <input class="entrada" type="date" id="bloqueio-data" value="2026-11-20" required>
+                                </div>
+                                <div class="form-grade form-grade-2">
+                                    <div class="campo">
+                                        <label for="bloqueio-de">Das</label>
+                                        <input class="entrada" type="time" id="bloqueio-de" value="15:00" required>
+                                    </div>
+                                    <div class="campo">
+                                        <label for="bloqueio-ate">Até</label>
+                                        <input class="entrada" type="time" id="bloqueio-ate" value="17:00" required>
+                                    </div>
+                                </div>
+                                <div class="campo">
+                                    <label for="bloqueio-motivo">Motivo administrativo</label>
+                                    <input class="entrada" type="text" id="bloqueio-motivo" value="Compromisso pessoal">
+                                    <p class="ajuda">Nenhum atendimento confirmado neste intervalo.</p>
+                                </div>
+                                <button class="btn btn-primario btn-bloco" type="submit">Salvar bloqueio</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tela" id="tela-configuracoes" data-tela="configuracoes" hidden>
+                    <div class="cabecalho">
+                        <div>
+                            <h1 tabindex="-1">Configurações</h1>
+                            <p>Suas informações profissionais e os serviços do consultório.</p>
+                        </div>
+                        <div class="cabecalho-acoes">
+                            <button class="btn btn-primario" type="button" data-toast="Alterações salvas.">Salvar alterações</button>
+                        </div>
+                    </div>
+    
+                    <div class="grade-principal">
+                        <div class="pilha">
+                            <section class="card form-pilha" aria-labelledby="info-titulo">
+                                <div>
+                                    <h2 id="info-titulo">Informações profissionais</h2>
+                                    <p class="ajuda espaco-topo">Dados utilizados na identificação do seu consultório.</p>
+                                </div>
+                                <div class="form-grade">
+                                    <div class="campo">
+                                        <label for="nome">Nome profissional</label>
+                                        <input class="entrada" type="text" id="nome" value="Julianny Bacelar" autocomplete="name">
+                                    </div>
+                                    <div class="campo">
+                                        <label for="crp">Registro profissional</label>
+                                        <input class="entrada" type="text" id="crp" value="CRP 06/215359">
+                                    </div>
+                                    <div class="campo">
+                                        <label for="email-prof">E-mail profissional</label>
+                                        <input class="entrada" type="email" id="email-prof" value="juliannybacelarlima@gmail.com" autocomplete="email">
+                                    </div>
+                                    <div class="campo">
+                                        <label for="telefone">Telefone</label>
+                                        <input class="entrada" type="tel" id="telefone" placeholder="Não informado" autocomplete="tel">
+                                    </div>
+                                </div>
+                                <div class="campo">
+                                    <label for="apresentacao">Apresentação profissional</label>
+                                    <textarea class="entrada" id="apresentacao">Psicóloga clínica com prática guiada pela Terapia Cognitivo-Comportamental. Atendimento online para adultos e adolescentes e presencial para crianças, com escuta, cuidado e sem julgamentos.</textarea>
+                                </div>
+                                <p class="pequeno"><span class="suave">Abordagem</span> <span class="tag">Terapia Cognitivo-Comportamental (TCC)</span></p>
+                            </section>
+    
+                            <section class="card form-pilha" aria-labelledby="conta-titulo">
+                                <div>
+                                    <h2 id="conta-titulo">Conta e segurança</h2>
+                                    <p class="ajuda espaco-topo">Mantenha suas credenciais pessoais e protegidas.</p>
+                                </div>
+                                <div class="cabecalho-acoes">
+                                    <button class="btn" type="button" data-toast="Troca de senha disponível quando o painel tiver servidor próprio.">Alterar senha</button>
+                                    <button class="btn" type="button" data-toast="Nenhuma outra sessão ativa.">Encerrar outras sessões</button>
+                                </div>
+                                <p class="ajuda">Acesso exclusivo da psicóloga responsável.</p>
+                            </section>
+                        </div>
+    
+                        <div class="pilha">
+                            <section class="card" aria-labelledby="servicos-titulo">
+                                <div class="card-cabecalho">
+                                    <div>
+                                        <h2 id="servicos-titulo">Serviços oferecidos</h2>
+                                        <p>3 serviços ativos</p>
+                                    </div>
+                                </div>
+                                <div class="servico">
+                                    <div>
+                                        <strong id="srv-1">Psicoterapia individual</strong>
+                                        <span>Adultos · Online · 50 min</span>
+                                    </div>
+                                    <span class="interruptor"><input type="checkbox" checked aria-labelledby="srv-1"><span></span></span>
+                                </div>
+                                <div class="servico">
+                                    <div>
+                                        <strong id="srv-2">Psicoterapia individual</strong>
+                                        <span>Adolescentes · Online · 50 min</span>
+                                    </div>
+                                    <span class="interruptor"><input type="checkbox" checked aria-labelledby="srv-2"><span></span></span>
+                                </div>
+                                <div class="servico">
+                                    <div>
+                                        <strong id="srv-3">Psicoterapia infantil</strong>
+                                        <span>Crianças · Presencial · 50 min</span>
+                                    </div>
+                                    <span class="interruptor"><input type="checkbox" checked aria-labelledby="srv-3"><span></span></span>
+                                </div>
+                                <button class="btn btn-bloco espaco-topo-grande" type="button" data-toast="Cadastro de serviço disponível na próxima versão."><i class="fa-solid fa-plus" aria-hidden="true"></i>Adicionar serviço</button>
+                            </section>
+    
+                            <section class="card card-bege form-pilha" aria-labelledby="visual-titulo">
+                                <div>
+                                    <h2 id="visual-titulo">Visualização</h2>
+                                    <p class="ajuda espaco-topo">Uma experiência confortável para você.</p>
+                                </div>
+                                <fieldset class="opcoes">
+                                    <legend class="sr-only">Tema de cores</legend>
+                                    <label class="opcao"><input type="radio" name="tema" value="padrao" checked><span>Padrão</span></label>
+                                    <label class="opcao"><input type="radio" name="tema" value="contraste"><span>Alto contraste</span></label>
+                                    <label class="opcao"><input type="radio" name="tema" value="daltonismo"><span>Daltonismo</span></label>
+                                </fieldset>
+                                <p class="ajuda">A preferência visual não altera os dados nem os agendamentos do consultório.</p>
+                            </section>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+    <div class="toast" id="aviso" role="status"></div>
+</body>
+
+</html>
